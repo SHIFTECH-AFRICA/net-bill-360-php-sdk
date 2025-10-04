@@ -14,7 +14,7 @@ class API extends JsonResource
      * @param Request $request
      * @return array
      */
-    public function toArray($request): array
+    public function toArray(Request $request): array
     {
         return parent::toArray($request);
     }
@@ -28,9 +28,9 @@ class API extends JsonResource
     public function with($request): array
     {
         return [
-            'api-version' => '1.0.8',
-            'author' => 'SHIFTECH AFRICA',
-            'author-url' => url('https://smsales.co.ke'),
+            'api-version' => '1.0.0',
+            'author' => 'NETKODI',
+            'author-url' => url('https://netkodi.co.ke'),
         ];
     }
 }

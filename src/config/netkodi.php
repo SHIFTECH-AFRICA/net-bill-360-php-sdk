@@ -11,55 +11,55 @@ return [
      * ------------------------------------
      */
     'url' => [
-        'endpoint' => env('NET_KODI_BASE_URI', 'https://free-radius.shiftechafrica.com/api/v1/'),
+        'endpoint' => env('NET_KODI_BASE_URI', 'https://api.netkodi.co.ke/api/v1/'),
 
         'users' => [
-            'index'   => 'index',
-            'store'   => 'store',
-            'show'    => 'show/{id}',    // requires ID
-            'update'  => 'update/{id}',  // requires ID
-            'delete'  => 'delete/{id}',  // requires ID
+            'index' => 'index',
+            'store' => 'store',
+            'show' => 'show/{id}',    // requires ID
+            'update' => 'update/{id}',  // requires ID
+            'delete' => 'delete/{id}',  // requires ID
             'restore' => 'restore/{id}', // requires ID
         ],
 
         'nas' => [
-            'types'  => 'types',
-            'index'  => 'index',
-            'store'  => 'store',
-            'show'   => 'show/{id}',
+            'types' => 'types',
+            'index' => 'index',
+            'store' => 'store',
+            'show' => 'show/{id}',
             'update' => 'update/{id}',
             'delete' => 'delete/{id}',
         ],
 
         'customers' => [
-            'index'  => 'index',
-            'store'  => 'store',
-            'show'   => 'show/{username}', // uses username not ID
+            'index' => 'index',
+            'store' => 'store',
+            'show' => 'show/{username}', // uses username not ID
             'update' => 'update',
         ],
 
         'subscriptions' => [
-            'index'  => 'index',
-            'store'  => 'store',
-            'show'   => 'show/{username}',
+            'index' => 'index',
+            'store' => 'store',
+            'show' => 'show/{username}',
             'update' => 'update',
         ],
 
         'plans' => [
-            'index'  => 'index',
-            'store'  => 'store',
-            'show'   => 'show/{id}',
+            'index' => 'index',
+            'store' => 'store',
+            'show' => 'show/{id}',
             'update' => 'update/{id}',
         ],
 
         'pools' => [
             'index' => 'index',
-            'show'  => 'show/{id}',
+            'show' => 'show/{id}',
         ],
 
         'tokens' => [
-            'store'  => 'store',
-            'show'   => 'show/{id}',
+            'store' => 'store',
+            'show' => 'show/{id}',
             'delete' => 'delete/{id}',
         ],
     ],

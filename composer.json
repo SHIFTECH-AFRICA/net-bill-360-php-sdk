@@ -1,0 +1,55 @@
+{
+    "name": "shiftechafrica/net-kodi-php-sdk",
+    "description": "Library for NetKodi Api Triggers. Use this to manage your ISP clients and network devices.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "shiftechafrica",
+        "isp",
+        "nas",
+        "pppoe",
+        "free radius",
+        "mikrotik",
+        "internet service provider",
+        "netkodi",
+        "broadband",
+        "fiber internet",
+        "wireless internet",
+        "network solutions",
+        "cloud services",
+        "technology",
+        "connectivity",
+        "digital solutions",
+        "telecommunications",
+        "internet packages",
+        "data services",
+        "IT infrastructure",
+        "enterprise internet",
+        "managed services",
+        "network security",
+        "business internet",
+        "home internet"
+    ],
+    "authors": [
+        {
+            "name": "shiftechafrica",
+            "email": "bugs@shiftech.co.ke"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "guzzlehttp/guzzle": "^7.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "SMSALES\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NetKodi\\NetKodiServiceProvider"
+            ]
+        }
+    }
+}

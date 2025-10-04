@@ -7,6 +7,7 @@ namespace NetKodi\Traits;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
+use NetKodi\Resources\API;
 
 trait NodeResponse
 {
