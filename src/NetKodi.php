@@ -2,6 +2,7 @@
 
 namespace NetKodi;
 
+use NetKodi\API\NetKodiCustomerController;
 use NetKodi\API\NetKodiIPPoolController;
 use NetKodi\API\NetKodiNasController;
 use NetKodi\API\NetKodiNasTypesController;
@@ -162,6 +163,31 @@ class NetKodi
     public function updatePlan(array $data, int $id): mixed
     {
         return (new NetKodiPlanController($this->token))->update($data, $id);
+    }
+
+    /**
+     * -------------------------------------
+     * Handle Customer/Clients
+     * ------------------------------------
+     */
+    public function getCustomers()
+    {
+        return (new NetKodiCustomerController($this->token))->index();
+    }
+
+    public function createCustomer(array $data): mixed
+    {
+        return (new NetKodiCustomerController($this->token))->store($data);
+    }
+
+    public function getCustomer(string $username)
+    {
+        return (new NetKodiCustomerController($this->token))->show($username);
+    }
+
+    public function updateCustomer(array $data): mixed
+    {
+        return (new NetKodiCustomerController($this->token))->update($data);
     }
 
 }
