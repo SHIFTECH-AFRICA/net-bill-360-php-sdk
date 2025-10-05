@@ -153,7 +153,7 @@ return (new NetKodi)->getSubscription('netkodi');
 
 | Version | Status | Packagist | Namespace | Release                                                                           |
 |----------|--------|------------|------------|-----------------------------------------------------------------------------------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-kodi-php-sdk` | `NetKodi\NetKodiServiceProvider` | [v1.0.1](https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk/releases/tag/v1.0.0) |
+| **1.x** | ✅ Latest | `shiftechafrica/net-kodi-php-sdk` | `NetKodi\NetKodiServiceProvider` | [v1.0.1](https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk/releases/tag/v1.0.1) |
 
 ---
 
