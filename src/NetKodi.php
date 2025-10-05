@@ -7,6 +7,7 @@ use NetKodi\API\NetKodiIPPoolController;
 use NetKodi\API\NetKodiNasController;
 use NetKodi\API\NetKodiNasTypesController;
 use NetKodi\API\NetKodiPlanController;
+use NetKodi\API\NetKodiSubscriptionController;
 use NetKodi\API\NetKodiTokenController;
 use NetKodi\API\NetKodiUsersController;
 use NetKodi\Traits\NetKodiAuthType;
@@ -188,6 +189,31 @@ class NetKodi
     public function updateCustomer(array $data): mixed
     {
         return (new NetKodiCustomerController($this->token))->update($data);
+    }
+
+    /**
+     * ----------------------------------------
+     * Handle Customer/Clients Subscriptions
+     * ----------------------------------------
+     */
+    public function getSubscriptions()
+    {
+        return (new NetKodiSubscriptionController($this->token))->index();
+    }
+
+    public function createSubscription(array $data): mixed
+    {
+        return (new NetKodiSubscriptionController($this->token))->store($data);
+    }
+
+    public function getSubscription(string $username)
+    {
+        return (new NetKodiSubscriptionController($this->token))->show($username);
+    }
+
+    public function updateSubscription(array $data): mixed
+    {
+        return (new NetKodiSubscriptionController($this->token))->update($data);
     }
 
 }
