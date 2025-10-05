@@ -5,6 +5,7 @@ namespace NetKodi;
 use NetKodi\API\NetKodiIPPoolController;
 use NetKodi\API\NetKodiNasController;
 use NetKodi\API\NetKodiNasTypesController;
+use NetKodi\API\NetKodiPlanController;
 use NetKodi\API\NetKodiTokenController;
 use NetKodi\API\NetKodiUsersController;
 
@@ -125,6 +126,31 @@ class NetKodi
     public function getPool(int $id)
     {
         return (new NetKodiIPPoolController())->show($id);
+    }
+
+    /**
+     * -------------------------------------
+     * Handle Bandwidth plans
+     * ------------------------------------
+     */
+    public function getPlans()
+    {
+        return (new NetKodiPlanController())->index();
+    }
+
+    public function createPlan(array $data): mixed
+    {
+        return (new NetKodiPlanController())->store($data);
+    }
+
+    public function getPlan(int $id)
+    {
+        return (new NetKodiPlanController())->show($id);
+    }
+
+    public function updatePlan(array $data, int $id): mixed
+    {
+        return (new NetKodiPlanController())->update($data, $id);
     }
 
 }

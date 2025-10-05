@@ -19,42 +19,42 @@ class NetKodiPlanController
     }
 
     /**
-     * Get nas
+     * Get plans
      */
     public function index(): mixed
     {
         return $this->client()
-            ->get(netkodi_url('nas', 'index'))
+            ->get(netkodi_url('plans', 'index'))
             ->json();
     }
 
     /**
-     * Store nas
+     * Store plans
      */
     public function store(array $data): mixed
     {
         return $this->client()
-            ->post(netkodi_url('nas', 'store'), $data)
+            ->post(netkodi_url('plans', 'store'), $data)
             ->json();
     }
 
     /**
-     * Show nas
+     * Show plans
      */
     public function show(int $id): mixed
     {
         return $this->client()
-            ->get(netkodi_url('nas', 'show', ['id' => $id]))
+            ->get(netkodi_url('plans', 'show', ['id' => $id]))
             ->json();
     }
 
     /**
-     * Update nas
+     * Update plans
      */
     public function update(array $data, int $id): mixed
     {
         return $this->client()
-            ->patch(netkodi_url('nas', 'update', ['id' => $id]), $data)
+            ->patch(netkodi_url('plans', 'update', ['id' => $id]), $data)
             ->json();
     }
 
