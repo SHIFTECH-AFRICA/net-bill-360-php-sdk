@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ------------------------------------
  * Define all the request options here
@@ -16,10 +17,10 @@ return [
         'users' => [
             'index' => 'index',
             'store' => 'store',
-            'show' => 'show/{id}',    // requires ID
-            'update' => 'update/{id}',  // requires ID
-            'delete' => 'delete/{id}',  // requires ID
-            'restore' => 'restore/{id}', // requires ID
+            'show' => 'show/{account}',    // requires account
+            'update' => 'update/{account}',  // requires account
+            'delete' => 'delete/{account}',  // requires account
+            'restore' => 'restore/{account}', // requires account
         ],
 
         'nas' => [
@@ -59,8 +60,8 @@ return [
 
         'tokens' => [
             'store' => 'store',
-            'show' => 'show/{id}',
-            'delete' => 'delete/{id}',
+            'show' => 'show/{account}',
+            'delete' => 'delete/{account}',
         ],
     ],
 

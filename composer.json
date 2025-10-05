@@ -32,18 +32,28 @@
     ],
     "authors": [
         {
-            "name": "shiftechafrica",
-            "email": "bugs@shiftech.co.ke"
+            "name": "Shiftech Africa",
+            "email": "bugs@shiftech.co.ke",
+            "homepage": "https://shiftechafrica.com"
         }
     ],
+    "homepage": "https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk",
+    "support": {
+        "issues": "https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk/issues",
+        "source": "https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk"
+    },
     "minimum-stability": "stable",
     "require": {
+        "php": ">=8.0",
         "guzzlehttp/guzzle": "^7.10"
     },
     "autoload": {
         "psr-4": {
-            "SMSALES\\": "src/"
-        }
+            "NetKodi\\": "src/"
+        },
+        "files": [
+            "src/Helpers/netkodi.php"
+        ]
     },
     "extra": {
         "laravel": {

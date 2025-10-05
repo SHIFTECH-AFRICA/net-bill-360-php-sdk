@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
 use NetKodi\Resources\API;
 
-trait NodeResponse
+trait NetKodiAPIResponse
 {
     /**
      * success response
