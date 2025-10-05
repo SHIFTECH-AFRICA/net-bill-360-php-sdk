@@ -21,7 +21,7 @@ class NetKodiIPPoolController
      */
     public function index(): mixed
     {
-        return $this->client()
+        return $this->client($this->token)
             ->get(netkodi_url('pools', 'index'))
             ->json();
     }
@@ -31,7 +31,7 @@ class NetKodiIPPoolController
      */
     public function show(int $id): mixed
     {
-        return $this->client()
+        return $this->client($this->token)
             ->get(netkodi_url('pools', 'show', ['id' => $id]))
             ->json();
     }

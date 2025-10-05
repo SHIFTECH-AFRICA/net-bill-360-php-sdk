@@ -31,7 +31,7 @@ class NetKodiPlanController
      */
     public function store(array $data): mixed
     {
-        return $this->client()
+        return $this->client($this->token)
             ->post(netkodi_url('plans', 'store'), $data)
             ->json();
     }
@@ -41,7 +41,7 @@ class NetKodiPlanController
      */
     public function show(int $id): mixed
     {
-        return $this->client()
+        return $this->client($this->token)
             ->get(netkodi_url('plans', 'show', ['id' => $id]))
             ->json();
     }
@@ -51,7 +51,7 @@ class NetKodiPlanController
      */
     public function update(array $data, int $id): mixed
     {
-        return $this->client()
+        return $this->client($this->token)
             ->patch(netkodi_url('plans', 'update', ['id' => $id]), $data)
             ->json();
     }
