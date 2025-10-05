@@ -95,7 +95,7 @@ use NetKodi\NetKodi;
 /**
  * NAS TYPES & DEVICES
  */
-return (new NetKodi)->nasTypes();
+return (new NetKodi)->getNasTypes();
 return (new NetKodi)->getAllNas();
 return (new NetKodi)->createNas([
     "nasname" => "192.168.88.109",
@@ -151,9 +151,9 @@ return (new NetKodi)->getSubscription('netkodi');
 
 ## 🧭 Version Guidance
 
-| Version | Status | Packagist | Namespace | Release |
-|----------|--------|------------|------------|----------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-kodi-php-sdk` | `NetKodi\NetKodiServiceProvider` | [v1.0.0](https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk/releases/tag/v1.0.0) |
+| Version | Status | Packagist | Namespace | Release                                                                           |
+|----------|--------|------------|------------|-----------------------------------------------------------------------------------|
+| **1.x** | ✅ Latest | `shiftechafrica/net-kodi-php-sdk` | `NetKodi\NetKodiServiceProvider` | [v1.0.1](https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk/releases/tag/v1.0.0) |
 
 ---
 
