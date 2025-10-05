@@ -59,6 +59,7 @@ return [
         ],
 
         'tokens' => [
+            'index' => 'index',
             'store' => 'store',
             'show' => 'show/{account}',
             'delete' => 'delete/{account}',

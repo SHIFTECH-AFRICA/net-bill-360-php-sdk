@@ -17,12 +17,22 @@ class NetKodiTokenController
     }
 
     /**
+     * Get users
+     */
+    public function index(): mixed
+    {
+        return $this->client()
+            ->get(netkodi_url('tokens', 'index'))
+            ->json();
+    }
+
+    /**
      * Create token
      */
     public function store(array $data)
     {
         return $this->client()
-            ->post(netkodi_url('users', 'store'), $data)
+            ->post(netkodi_url('tokens', 'store'), $data)
             ->json();
     }
 
@@ -32,7 +42,17 @@ class NetKodiTokenController
     public function show(int|string $account): mixed
     {
         return $this->client()
-            ->get(netkodi_url('users', 'show', ['account' => $account]))
+            ->get(netkodi_url('tokens', 'show', ['account' => $account]))
+            ->json();
+    }
+
+    /**
+     * Delete user
+     */
+    public function delete(int|string $account): mixed
+    {
+        return $this->client()
+            ->delete(netkodi_url('tokens', 'delete', ['account' => $account]))
             ->json();
     }
 
