@@ -1,7 +1,7 @@
-# <p align="center"><a href="https://netkodi.co.ke/" target="_blank"><img width="100" src="https://shiftechafrica.com/img/logo.png" alt="Shiftech Africa Logo"></a></p>
+# <p align="center"><a href="https://netkodi.co.ke/" target="_blank"><img width="100" src="https://shiftechafrica.com/img/logo.png" alt="NetKodi - Connect - Bill - Sell - Internet"></a></p>
 
 <p align="center">
-  <b>Be in the next level</b><br>
+  <b>NetKodi - Connect - Bill - Sell - Internet</b><br>
   <a href="https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk/issues">
     <img src="https://img.shields.io/github/issues/SHIFTECH-AFRICA/net-kodi-php-sdk.svg">
   </a>
