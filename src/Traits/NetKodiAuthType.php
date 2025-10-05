@@ -9,7 +9,7 @@ trait NetKodiAuthType
 {
     protected string $username;
     protected string $password;
-    protected string $token;
+    protected string|null $token;
     protected bool $isBasic = false;
 
     /**
@@ -25,9 +25,16 @@ trait NetKodiAuthType
     /**
      * Reusable HTTP client with Basic or Bearer Auth
      */
-    protected function client(): PendingRequest
+    protected function client(?string $token = null): PendingRequest
     {
         $this->initAuth();
+
+        /**
+         * Dynamically override token at runtime
+         */
+        if ($token) {
+            $this->token = $token;
+        }
 
         return $this->isBasic
             ? Http::withBasicAuth($this->username, $this->password)

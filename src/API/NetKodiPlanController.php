@@ -13,9 +13,7 @@ class NetKodiPlanController
      */
     public function __construct(?string $token = null)
     {
-        if ($token) {
-            $this->token = $token;
-        }
+        $this->token = $token;
     }
 
     /**
@@ -23,7 +21,7 @@ class NetKodiPlanController
      */
     public function index(): mixed
     {
-        return $this->client()
+        return $this->client($this->token)
             ->get(netkodi_url('plans', 'index'))
             ->json();
     }

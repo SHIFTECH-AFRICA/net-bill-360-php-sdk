@@ -13,9 +13,7 @@ class NetKodiNasController
      */
     public function __construct(?string $token = null)
     {
-        if ($token) {
-            $this->token = $token;
-        }
+        $this->token = $token;
     }
 
     /**

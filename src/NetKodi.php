@@ -8,9 +8,20 @@ use NetKodi\API\NetKodiNasTypesController;
 use NetKodi\API\NetKodiPlanController;
 use NetKodi\API\NetKodiTokenController;
 use NetKodi\API\NetKodiUsersController;
+use NetKodi\Traits\NetKodiAuthType;
 
 class NetKodi
 {
+    use NetKodiAuthType;
+
+    /**
+     * Constructor: always use Bearer Auth
+     */
+    public function __construct(?string $token = null)
+    {
+        $this->token = $token;
+    }
+
     /**
      * ---------------------------------------
      * Handle all that relates to users
@@ -90,27 +101,27 @@ class NetKodi
      */
     public function getAllNas()
     {
-        return (new NetKodiNasController())->index();
+        return (new NetKodiNasController($this->token))->index();
     }
 
     public function createNas(array $data): mixed
     {
-        return (new NetKodiNasController())->store($data);
+        return (new NetKodiNasController($this->token))->store($data);
     }
 
     public function getNas(int $id)
     {
-        return (new NetKodiNasController())->show($id);
+        return (new NetKodiNasController($this->token))->show($id);
     }
 
     public function updateNas(array $data, int $id): mixed
     {
-        return (new NetKodiNasController())->update($data, $id);
+        return (new NetKodiNasController($this->token))->update($data, $id);
     }
 
     public function deleteNas(int $id)
     {
-        return (new NetKodiNasController())->delete($id);
+        return (new NetKodiNasController($this->token))->delete($id);
     }
 
     /**
@@ -120,12 +131,12 @@ class NetKodi
      */
     public function getPools()
     {
-        return (new NetKodiIPPoolController())->index();
+        return (new NetKodiIPPoolController($this->token))->index();
     }
 
     public function getPool(int $id)
     {
-        return (new NetKodiIPPoolController())->show($id);
+        return (new NetKodiIPPoolController($this->token))->show($id);
     }
 
     /**
@@ -135,22 +146,22 @@ class NetKodi
      */
     public function getPlans()
     {
-        return (new NetKodiPlanController())->index();
+        return (new NetKodiPlanController($this->token))->index();
     }
 
     public function createPlan(array $data): mixed
     {
-        return (new NetKodiPlanController())->store($data);
+        return (new NetKodiPlanController($this->token))->store($data);
     }
 
     public function getPlan(int $id)
     {
-        return (new NetKodiPlanController())->show($id);
+        return (new NetKodiPlanController($this->token))->show($id);
     }
 
     public function updatePlan(array $data, int $id): mixed
     {
-        return (new NetKodiPlanController())->update($data, $id);
+        return (new NetKodiPlanController($this->token))->update($data, $id);
     }
 
 }
