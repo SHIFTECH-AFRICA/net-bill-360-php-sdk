@@ -2,6 +2,7 @@
 
 namespace NetKodi;
 
+use NetKodi\API\NetKodiIPPoolController;
 use NetKodi\API\NetKodiNasController;
 use NetKodi\API\NetKodiNasTypesController;
 use NetKodi\API\NetKodiTokenController;
@@ -110,4 +111,20 @@ class NetKodi
     {
         return (new NetKodiNasController())->delete($id);
     }
+
+    /**
+     * ----------------------------------
+     * Handle Nas Pools Operations
+     * ---------------------------------
+     */
+    public function getPools()
+    {
+        return (new NetKodiIPPoolController())->index();
+    }
+
+    public function getPool(int $id)
+    {
+        return (new NetKodiIPPoolController())->show($id);
+    }
+
 }
