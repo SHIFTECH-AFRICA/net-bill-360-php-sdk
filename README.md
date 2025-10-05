@@ -160,7 +160,7 @@ return (new NetKodi)->getSubscription('netkodi');
 ## 🛡️ Security Vulnerabilities
 
 If you discover any security vulnerabilities, please contact:  
-📧 **[bugs@shiftech.co.ke](mailto:bugs@shiftech.co.ke)**
+📧 **[Bugs](mailto:bugs@shiftech.co.ke)**
 
 ---
 
