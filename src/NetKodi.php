@@ -2,6 +2,7 @@
 
 namespace NetKodi;
 
+use NetKodi\API\NetKodiNasController;
 use NetKodi\API\NetKodiNasTypesController;
 use NetKodi\API\NetKodiTokenController;
 use NetKodi\API\NetKodiUsersController;
@@ -77,5 +78,36 @@ class NetKodi
     public function nasTypes()
     {
         return (new NetKodiNasTypesController())->types();
+    }
+
+
+    /**
+     * --------------------------------------------
+     * Handle nas devices
+     * --------------------------------------------
+     */
+    public function getAllNas()
+    {
+        return (new NetKodiNasController())->index();
+    }
+
+    public function createNas(array $data): mixed
+    {
+        return (new NetKodiNasController())->store($data);
+    }
+
+    public function getNas(int $id)
+    {
+        return (new NetKodiNasController())->show($id);
+    }
+
+    public function updateNas(array $data, int $id): mixed
+    {
+        return (new NetKodiNasController())->update($data, $id);
+    }
+
+    public function deleteNas(int $id)
+    {
+        return (new NetKodiNasController())->delete($id);
     }
 }
