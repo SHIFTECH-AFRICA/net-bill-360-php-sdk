@@ -45,12 +45,12 @@ It helps ISPs and network administrators manage and automate network operations 
 Install via [Composer](https://getcomposer.org/):
 
 ```bash
-composer require shiftechafrica/net-kodi-php-sdk
+composer require shiftechafrica/net-bill-360-php-sdk
 ```
 
 Update to the latest version:
 ```bash
-composer update shiftechafrica/net-kodi-php-sdk --lock
+composer update shiftechafrica/net-bill-360-php-sdk --lock
 ```
 
 If not auto-discovered, run:
