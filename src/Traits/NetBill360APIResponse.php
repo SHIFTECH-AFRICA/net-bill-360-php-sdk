@@ -7,7 +7,7 @@ namespace NetBill360\Traits;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
-use NetKodi\Resources\API;
+use netbill360\Resources\API;
 
 trait NetBill360APIResponse
 {

@@ -22,7 +22,7 @@ class NetBill360TokenController
     public function index(): mixed
     {
         return $this->client()
-            ->get(netkodi_url('tokens', 'index'))
+            ->get(netbill360_url('tokens', 'index'))
             ->json();
     }
 
@@ -32,7 +32,7 @@ class NetBill360TokenController
     public function store(array $data)
     {
         return $this->client()
-            ->post(netkodi_url('tokens', 'store'), $data)
+            ->post(netbill360_url('tokens', 'store'), $data)
             ->json();
     }
 
@@ -42,7 +42,7 @@ class NetBill360TokenController
     public function show(int|string $account): mixed
     {
         return $this->client()
-            ->get(netkodi_url('tokens', 'show', ['account' => $account]))
+            ->get(netbill360_url('tokens', 'show', ['account' => $account]))
             ->json();
     }
 
@@ -52,7 +52,7 @@ class NetBill360TokenController
     public function delete(int|string $account): mixed
     {
         return $this->client()
-            ->delete(netkodi_url('tokens', 'delete', ['account' => $account]))
+            ->delete(netbill360_url('tokens', 'delete', ['account' => $account]))
             ->json();
     }
 

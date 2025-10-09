@@ -70,7 +70,7 @@ config/netbill360.php
 
 Add your API token to the `.env` file:
 ```dotenv
-NET_KODI_API_TOKEN=your_api_token_here
+NET_BILL_360_API_TOKEN=your_api_token_here
 ```
 
 ---

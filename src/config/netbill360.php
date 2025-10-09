@@ -12,7 +12,7 @@ return [
      * --------------------------------------------------------------
      */
     'url' => [
-        'endpoint' => env('NET_KODI_BASE_URI', 'https://api.netbill360.com/api/v1/'),
+        'endpoint' => env('NET_BILL_360_BASE_URI', 'https://api.netbill360.com/api/v1/'),
 
         'users' => [
             'index' => 'index',
@@ -71,14 +71,14 @@ return [
      * Set the account username, this is for applicable for super user
      * ---------------------------------------------------------------
      */
-    'net_kodi_username' => env('NET_KODI_USERNAME', 'netbill360'),
+    'net_bill_360_username' => env('NET_BILL_360_USERNAME', 'netbill360'),
 
     /**
      * ---------------------------------------------------------------
      * Set the account password, this is for applicable for super user
      * ---------------------------------------------------------------
      */
-    'net_kodi_password' => env('NET_KODI_PASSWORD', 'secret'),
+    'net_bill_360_password' => env('NET_BILL_360_PASSWORD', 'secret'),
 
     /**
      * ---------------------------------------------------------------
@@ -86,7 +86,7 @@ return [
      * account.
      * ---------------------------------------------------------------
      */
-    'net_kodi_token' => env('NET_KODI_API_TOKEN', 'bm9kZTw+c2VjcmV0'),
+    'net_bill_360_token' => env('NET_BILL_360_API_TOKEN', 'bm9kZTw+c2VjcmV0'),
 
     /**
      * ---------------------------------------------------------------------------------------------------

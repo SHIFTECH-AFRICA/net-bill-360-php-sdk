@@ -22,7 +22,7 @@ class NetBill360SubscriptionController
     public function index(): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('subscriptions', 'index'))
+            ->get(netbill360_url('subscriptions', 'index'))
             ->json();
     }
 
@@ -32,7 +32,7 @@ class NetBill360SubscriptionController
     public function store(array $data): mixed
     {
         return $this->client($this->token)
-            ->post(netkodi_url('subscriptions', 'store'), $data)
+            ->post(netbill360_url('subscriptions', 'store'), $data)
             ->json();
     }
 
@@ -42,7 +42,7 @@ class NetBill360SubscriptionController
     public function show(string $username): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('subscriptions', 'show', ['username' => $username]))
+            ->get(netbill360_url('subscriptions', 'show', ['username' => $username]))
             ->json();
     }
 
@@ -52,7 +52,7 @@ class NetBill360SubscriptionController
     public function update(array $data): mixed
     {
         return $this->client($this->token)
-            ->patch(netkodi_url('subscriptions', 'update'), $data)
+            ->patch(netbill360_url('subscriptions', 'update'), $data)
             ->json();
     }
 

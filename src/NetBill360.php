@@ -31,7 +31,7 @@ class NetBill360
 
     /**
      * Initialize the SDK instance with an optional custom token.
-     * If not provided, it defaults to the one from config('netkodi.net_kodi_token').
+     * If not provided, it defaults to the one from config('netbill360.net_bill_360_token').
      */
     public function __construct(?string $token = null)
     {

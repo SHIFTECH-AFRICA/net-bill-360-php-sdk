@@ -17,9 +17,9 @@ trait NetBill360AuthType
      */
     protected function initAuth(): void
     {
-        $this->username = config('netkodi.net_kodi_username');
-        $this->password = config('netkodi.net_kodi_password');
-        $this->token = config('netkodi.net_kodi_token');
+        $this->username = config('netbill360.net_bill_360_username');
+        $this->password = config('netbill360.net_bill_360_password');
+        $this->token = config('netbill360.net_bill_360_token');
     }
 
     /**

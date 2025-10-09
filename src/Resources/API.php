@@ -29,7 +29,7 @@ class API extends JsonResource
     {
         return [
             'api-version' => '1.0.0',
-            'author' => 'NETKODI',
+            'author' => 'netbill360',
             'author-url' => url('https://netbill360.com'),
         ];
     }

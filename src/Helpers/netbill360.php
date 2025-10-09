@@ -26,7 +26,7 @@ if (!function_exists('netbill360_url')) {
      */
     function netbill360_url(string $resource, string $action, array $params = [], array $query = []): string
     {
-        $config = config("netkodi.url");
+        $config = config("netbill360.url");
         $endpoint = rtrim($config['endpoint'], '/');
 
         if (!isset($config[$resource][$action])) {

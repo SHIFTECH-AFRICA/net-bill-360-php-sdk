@@ -22,7 +22,7 @@ class NetBill360NasController
     public function index(): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('nas', 'index'))
+            ->get(netbill360_url('nas', 'index'))
             ->json();
     }
 
@@ -32,7 +32,7 @@ class NetBill360NasController
     public function store(array $data): mixed
     {
         return $this->client($this->token)
-            ->post(netkodi_url('nas', 'store'), $data)
+            ->post(netbill360_url('nas', 'store'), $data)
             ->json();
     }
 
@@ -42,7 +42,7 @@ class NetBill360NasController
     public function show(int $id): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('nas', 'show', ['id' => $id]))
+            ->get(netbill360_url('nas', 'show', ['id' => $id]))
             ->json();
     }
 
@@ -52,7 +52,7 @@ class NetBill360NasController
     public function update(array $data, int $id): mixed
     {
         return $this->client($this->token)
-            ->patch(netkodi_url('nas', 'update', ['id' => $id]), $data)
+            ->patch(netbill360_url('nas', 'update', ['id' => $id]), $data)
             ->json();
     }
 
@@ -62,7 +62,7 @@ class NetBill360NasController
     public function delete(int $id): mixed
     {
         return $this->client($this->token)
-            ->delete(netkodi_url('nas', 'delete', ['id' => $id]))
+            ->delete(netbill360_url('nas', 'delete', ['id' => $id]))
             ->json();
     }
 

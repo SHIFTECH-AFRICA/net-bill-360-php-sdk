@@ -22,7 +22,7 @@ class NetBill360UsersController
     public function index(): mixed
     {
         return $this->client()
-            ->get(netkodi_url('users', 'index'))
+            ->get(netbill360_url('users', 'index'))
             ->json();
     }
 
@@ -32,7 +32,7 @@ class NetBill360UsersController
     public function store(array $data): mixed
     {
         return $this->client()
-            ->post(netkodi_url('users', 'store'), $data)
+            ->post(netbill360_url('users', 'store'), $data)
             ->json();
     }
 
@@ -42,7 +42,7 @@ class NetBill360UsersController
     public function show(int|string $account): mixed
     {
         return $this->client()
-            ->get(netkodi_url('users', 'show', ['account' => $account]))
+            ->get(netbill360_url('users', 'show', ['account' => $account]))
             ->json();
     }
 
@@ -52,7 +52,7 @@ class NetBill360UsersController
     public function update(array $data, int|string $account): mixed
     {
         return $this->client()
-            ->patch(netkodi_url('users', 'update', ['account' => $account]), $data)
+            ->patch(netbill360_url('users', 'update', ['account' => $account]), $data)
             ->json();
     }
 
@@ -62,7 +62,7 @@ class NetBill360UsersController
     public function delete(int|string $account): mixed
     {
         return $this->client()
-            ->delete(netkodi_url('users', 'delete', ['account' => $account]))
+            ->delete(netbill360_url('users', 'delete', ['account' => $account]))
             ->json();
     }
 
@@ -72,7 +72,7 @@ class NetBill360UsersController
     public function restore(int|string $account): mixed
     {
         return $this->client()
-            ->patch(netkodi_url('users', 'restore', ['account' => $account]))
+            ->patch(netbill360_url('users', 'restore', ['account' => $account]))
             ->json();
     }
 }

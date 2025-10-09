@@ -22,7 +22,7 @@ class NetBill360IPPoolController
     public function index(): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('pools', 'index'))
+            ->get(netbill360_url('pools', 'index'))
             ->json();
     }
 
@@ -32,7 +32,7 @@ class NetBill360IPPoolController
     public function show(int $id): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('pools', 'show', ['id' => $id]))
+            ->get(netbill360_url('pools', 'show', ['id' => $id]))
             ->json();
     }
 }

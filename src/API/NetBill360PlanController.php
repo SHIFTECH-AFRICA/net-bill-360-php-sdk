@@ -22,7 +22,7 @@ class NetBill360PlanController
     public function index(): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('plans', 'index'))
+            ->get(netbill360_url('plans', 'index'))
             ->json();
     }
 
@@ -32,7 +32,7 @@ class NetBill360PlanController
     public function store(array $data): mixed
     {
         return $this->client($this->token)
-            ->post(netkodi_url('plans', 'store'), $data)
+            ->post(netbill360_url('plans', 'store'), $data)
             ->json();
     }
 
@@ -42,7 +42,7 @@ class NetBill360PlanController
     public function show(int $id): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('plans', 'show', ['id' => $id]))
+            ->get(netbill360_url('plans', 'show', ['id' => $id]))
             ->json();
     }
 
@@ -52,7 +52,7 @@ class NetBill360PlanController
     public function update(array $data, int $id): mixed
     {
         return $this->client($this->token)
-            ->patch(netkodi_url('plans', 'update', ['id' => $id]), $data)
+            ->patch(netbill360_url('plans', 'update', ['id' => $id]), $data)
             ->json();
     }
 

@@ -22,7 +22,7 @@ class NetBill360NasTypesController
     public function types()
     {
         return $this->client()
-            ->get(netkodi_url('nas', 'types'))
+            ->get(netbill360_url('nas', 'types'))
             ->json();
     }
 }

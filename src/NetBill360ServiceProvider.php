@@ -13,7 +13,7 @@ class NetBill360ServiceProvider extends ServiceProvider
     {
         // Merge default config
         $this->mergeConfigFrom(
-            __DIR__ . '/config/netbill360.php', 'netkodi'
+            __DIR__ . '/config/netbill360.php', 'netbill360'
         );
     }
 
