@@ -7,12 +7,12 @@
  */
 return [
     /**
-     * ------------------------------------
-     * set the base endpoint and urls here
-     * ------------------------------------
+     * --------------------------------------------------------------
+     * set the base endpoint and urls here https://netbill360.com/
+     * --------------------------------------------------------------
      */
     'url' => [
-        'endpoint' => env('NET_KODI_BASE_URI', 'https://api.netkodi.co.ke/api/v1/'),
+        'endpoint' => env('NET_KODI_BASE_URI', 'https://api.netbill360.com/api/v1/'),
 
         'users' => [
             'index' => 'index',
@@ -71,7 +71,7 @@ return [
      * Set the account username, this is for applicable for super user
      * ---------------------------------------------------------------
      */
-    'net_kodi_username' => env('NET_KODI_USERNAME', 'free-radius'),
+    'net_kodi_username' => env('NET_KODI_USERNAME', 'netbill360'),
 
     /**
      * ---------------------------------------------------------------

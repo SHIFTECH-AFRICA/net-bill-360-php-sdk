@@ -1,12 +1,12 @@
 <?php
 
-namespace NetKodi\API;
+namespace NetBill360\API;
 
-use NetKodi\Traits\NetKodiAuthType;
+use NetBill360\Traits\NetBill360AuthType;
 
-class NetKodiIPPoolController
+class NetBill360IPPoolController
 {
-    use NetKodiAuthType;
+    use NetBill360AuthType;
 
     /**
      * Constructor: always use Bearer Auth

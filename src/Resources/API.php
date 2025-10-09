@@ -1,6 +1,6 @@
 <?php
 
-namespace NetKodi\Resources;
+namespace NetBill360\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -30,7 +30,7 @@ class API extends JsonResource
         return [
             'api-version' => '1.0.0',
             'author' => 'NETKODI',
-            'author-url' => url('https://netkodi.co.ke'),
+            'author-url' => url('https://netbill360.com'),
         ];
     }
 }

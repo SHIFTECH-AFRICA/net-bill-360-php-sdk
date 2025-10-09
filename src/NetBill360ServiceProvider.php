@@ -1,10 +1,10 @@
 <?php
 
-namespace NetKodi;
+namespace NetBill360;
 
 use Illuminate\Support\ServiceProvider;
 
-class NetKodiServiceProvider extends ServiceProvider
+class NetBill360ServiceProvider extends ServiceProvider
 {
     /**
      * Register bindings and config.
@@ -13,7 +13,7 @@ class NetKodiServiceProvider extends ServiceProvider
     {
         // Merge default config
         $this->mergeConfigFrom(
-            __DIR__ . '/config/netkodi.php', 'netkodi'
+            __DIR__ . '/config/netbill360.php', 'netkodi'
         );
     }
 
@@ -24,7 +24,7 @@ class NetKodiServiceProvider extends ServiceProvider
     {
         // Allow publishing config
         $this->publishes([
-            __DIR__ . '/config/netkodi.php' => config_path('netkodi.php'),
+            __DIR__ . '/config/netbill360.php' => config_path('netbill360.php'),
         ], 'config');
     }
 }

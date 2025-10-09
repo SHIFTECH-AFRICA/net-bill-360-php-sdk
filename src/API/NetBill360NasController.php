@@ -1,12 +1,12 @@
 <?php
 
-namespace NetKodi\API;
+namespace NetBill360\API;
 
-use NetKodi\Traits\NetKodiAuthType;
+use NetBill360\Traits\NetBill360AuthType;
 
-class NetKodiPlanController
+class NetBill360NasController
 {
-    use NetKodiAuthType;
+    use NetBill360AuthType;
 
     /**
      * Constructor: always use Bearer Auth
@@ -17,42 +17,52 @@ class NetKodiPlanController
     }
 
     /**
-     * Get plans
+     * Get nas
      */
     public function index(): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('plans', 'index'))
+            ->get(netkodi_url('nas', 'index'))
             ->json();
     }
 
     /**
-     * Store plans
+     * Store nas
      */
     public function store(array $data): mixed
     {
         return $this->client($this->token)
-            ->post(netkodi_url('plans', 'store'), $data)
+            ->post(netkodi_url('nas', 'store'), $data)
             ->json();
     }
 
     /**
-     * Show plans
+     * Show nas
      */
     public function show(int $id): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('plans', 'show', ['id' => $id]))
+            ->get(netkodi_url('nas', 'show', ['id' => $id]))
             ->json();
     }
 
     /**
-     * Update plans
+     * Update nas
      */
     public function update(array $data, int $id): mixed
     {
         return $this->client($this->token)
-            ->patch(netkodi_url('plans', 'update', ['id' => $id]), $data)
+            ->patch(netkodi_url('nas', 'update', ['id' => $id]), $data)
+            ->json();
+    }
+
+    /**
+     * Delete nas
+     */
+    public function delete(int $id): mixed
+    {
+        return $this->client($this->token)
+            ->delete(netkodi_url('nas', 'delete', ['id' => $id]))
             ->json();
     }
 

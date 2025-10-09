@@ -1,12 +1,12 @@
 <?php
 
-namespace NetKodi\API;
+namespace NetBill360\API;
 
-use NetKodi\Traits\NetKodiAuthType;
+use NetBill360\Traits\NetBill360AuthType;
 
-class NetKodiTokenController
+class NetBill360TokenController
 {
-    use NetKodiAuthType;
+    use NetBill360AuthType;
 
     /**
      * Constructor: always use Basic Auth

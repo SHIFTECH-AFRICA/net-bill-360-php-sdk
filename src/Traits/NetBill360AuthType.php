@@ -1,11 +1,11 @@
 <?php
 
-namespace NetKodi\Traits;
+namespace NetBill360\Traits;
 
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
 
-trait NetKodiAuthType
+trait NetBill360AuthType
 {
     protected string $username;
     protected string $password;

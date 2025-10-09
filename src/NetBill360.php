@@ -1,33 +1,33 @@
 <?php
 
-namespace NetKodi;
+namespace NetBill360;
 
-use NetKodi\API\{NetKodiCustomerController,
-    NetKodiIPPoolController,
-    NetKodiNasController,
-    NetKodiNasTypesController,
-    NetKodiPlanController,
-    NetKodiSubscriptionController,
-    NetKodiTokenController,
-    NetKodiUsersController
+use NetBill360\API\{NetBill360CustomerController,
+    NetBill360IPPoolController,
+    NetBill360NasController,
+    NetBill360NasTypesController,
+    NetBill360PlanController,
+    NetBill360SubscriptionController,
+    NetBill360TokenController,
+    NetBill360UsersController
 };
-use NetKodi\Traits\NetKodiAuthType;
+use NetBill360\Traits\NetBill360AuthType;
 
 /**
  * --------------------------------------------------------------------------
- * NetKodi SDK Core Class
+ * NetBill360 SDK Core Class
  * --------------------------------------------------------------------------
- * Acts as a unified interface to interact with all NetKodi API endpoints,
+ * Acts as a unified interface to interact with all NetBill360 API endpoints,
  * including Users, NAS devices, Plans, Customers, Tokens, and Subscriptions.
  *
  * This class provides high-level methods that wrap around the underlying
  * API controllers while maintaining authentication and reusability.
  *
- * @package NetKodi
+ * @package NetBill360
  */
-class NetKodi
+class NetBill360
 {
-    use NetKodiAuthType;
+    use NetBill360AuthType;
 
     /**
      * Initialize the SDK instance with an optional custom token.
@@ -45,37 +45,37 @@ class NetKodi
     /** Get all users */
     public function getUsers(): mixed
     {
-        return (new NetKodiUsersController())->index();
+        return (new NetBill360UsersController())->index();
     }
 
     /** Create a new user */
     public function createUser(array $data): mixed
     {
-        return (new NetKodiUsersController())->store($data);
+        return (new NetBill360UsersController())->store($data);
     }
 
     /** Get details for a specific user by account ID */
     public function getUser(int $account): mixed
     {
-        return (new NetKodiUsersController())->show($account);
+        return (new NetBill360UsersController())->show($account);
     }
 
     /** Update user details */
     public function updateUser(array $data, int $account): mixed
     {
-        return (new NetKodiUsersController())->update($data, $account);
+        return (new NetBill360UsersController())->update($data, $account);
     }
 
     /** Delete a user */
     public function deleteUser(int $account): mixed
     {
-        return (new NetKodiUsersController())->delete($account);
+        return (new NetBill360UsersController())->delete($account);
     }
 
     /** Restore a deleted user */
     public function restoreUser(int $account): mixed
     {
-        return (new NetKodiUsersController())->restore($account);
+        return (new NetBill360UsersController())->restore($account);
     }
 
     /* -------------------------------------------------------------------------
@@ -85,25 +85,25 @@ class NetKodi
     /** Get all tokens */
     public function getTokens(): mixed
     {
-        return (new NetKodiTokenController())->index();
+        return (new NetBill360TokenController())->index();
     }
 
     /** Create a new token */
     public function createToken(array $data): mixed
     {
-        return (new NetKodiTokenController())->store($data);
+        return (new NetBill360TokenController())->store($data);
     }
 
     /** Get token details by ID */
     public function getToken(int $id): mixed
     {
-        return (new NetKodiTokenController())->show($id);
+        return (new NetBill360TokenController())->show($id);
     }
 
     /** Delete a token */
     public function deleteToken(int $id): mixed
     {
-        return (new NetKodiTokenController())->delete($id);
+        return (new NetBill360TokenController())->delete($id);
     }
 
     /* -------------------------------------------------------------------------
@@ -113,37 +113,37 @@ class NetKodi
     /** Get available NAS types */
     public function getNasTypes(): mixed
     {
-        return (new NetKodiNasTypesController())->types();
+        return (new NetBill360NasTypesController())->types();
     }
 
     /** Get all NAS devices */
     public function getAllNas(): mixed
     {
-        return (new NetKodiNasController($this->token))->index();
+        return (new NetBill360NasController($this->token))->index();
     }
 
     /** Create a NAS device */
     public function createNas(array $data): mixed
     {
-        return (new NetKodiNasController($this->token))->store($data);
+        return (new NetBill360NasController($this->token))->store($data);
     }
 
     /** Get NAS details by ID */
     public function getNas(int $id): mixed
     {
-        return (new NetKodiNasController($this->token))->show($id);
+        return (new NetBill360NasController($this->token))->show($id);
     }
 
     /** Update a NAS device */
     public function updateNas(array $data, int $id): mixed
     {
-        return (new NetKodiNasController($this->token))->update($data, $id);
+        return (new NetBill360NasController($this->token))->update($data, $id);
     }
 
     /** Delete a NAS device */
     public function deleteNas(int $id): mixed
     {
-        return (new NetKodiNasController($this->token))->delete($id);
+        return (new NetBill360NasController($this->token))->delete($id);
     }
 
     /* -------------------------------------------------------------------------
@@ -153,13 +153,13 @@ class NetKodi
     /** Get all IP pools */
     public function getPools(): mixed
     {
-        return (new NetKodiIPPoolController($this->token))->index();
+        return (new NetBill360IPPoolController($this->token))->index();
     }
 
     /** Get specific pool by ID */
     public function getPool(int $id): mixed
     {
-        return (new NetKodiIPPoolController($this->token))->show($id);
+        return (new NetBill360IPPoolController($this->token))->show($id);
     }
 
     /* -------------------------------------------------------------------------
@@ -169,25 +169,25 @@ class NetKodi
     /** Get all bandwidth plans */
     public function getPlans(): mixed
     {
-        return (new NetKodiPlanController($this->token))->index();
+        return (new NetBill360PlanController($this->token))->index();
     }
 
     /** Create a new bandwidth plan */
     public function createPlan(array $data): mixed
     {
-        return (new NetKodiPlanController($this->token))->store($data);
+        return (new NetBill360PlanController($this->token))->store($data);
     }
 
     /** Get a specific plan */
     public function getPlan(int $id): mixed
     {
-        return (new NetKodiPlanController($this->token))->show($id);
+        return (new NetBill360PlanController($this->token))->show($id);
     }
 
     /** Update a plan */
     public function updatePlan(array $data, int $id): mixed
     {
-        return (new NetKodiPlanController($this->token))->update($data, $id);
+        return (new NetBill360PlanController($this->token))->update($data, $id);
     }
 
     /* -------------------------------------------------------------------------
@@ -197,25 +197,25 @@ class NetKodi
     /** Get all customers */
     public function getCustomers(): mixed
     {
-        return (new NetKodiCustomerController($this->token))->index();
+        return (new NetBill360CustomerController($this->token))->index();
     }
 
     /** Create a new customer */
     public function createCustomer(array $data): mixed
     {
-        return (new NetKodiCustomerController($this->token))->store($data);
+        return (new NetBill360CustomerController($this->token))->store($data);
     }
 
     /** Get customer details by username */
     public function getCustomer(string $username): mixed
     {
-        return (new NetKodiCustomerController($this->token))->show($username);
+        return (new NetBill360CustomerController($this->token))->show($username);
     }
 
     /** Update customer details */
     public function updateCustomer(array $data): mixed
     {
-        return (new NetKodiCustomerController($this->token))->update($data);
+        return (new NetBill360CustomerController($this->token))->update($data);
     }
 
     /* -------------------------------------------------------------------------
@@ -225,24 +225,24 @@ class NetKodi
     /** Get all subscriptions */
     public function getSubscriptions(): mixed
     {
-        return (new NetKodiSubscriptionController($this->token))->index();
+        return (new NetBill360SubscriptionController($this->token))->index();
     }
 
     /** Create a new subscription */
     public function createSubscription(array $data): mixed
     {
-        return (new NetKodiSubscriptionController($this->token))->store($data);
+        return (new NetBill360SubscriptionController($this->token))->store($data);
     }
 
     /** Get subscription details by username */
     public function getSubscription(string $username): mixed
     {
-        return (new NetKodiSubscriptionController($this->token))->show($username);
+        return (new NetBill360SubscriptionController($this->token))->show($username);
     }
 
     /** Update an existing subscription */
     public function updateSubscription(array $data): mixed
     {
-        return (new NetKodiSubscriptionController($this->token))->update($data);
+        return (new NetBill360SubscriptionController($this->token))->update($data);
     }
 }

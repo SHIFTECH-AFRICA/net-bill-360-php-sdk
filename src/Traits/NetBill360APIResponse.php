@@ -1,7 +1,7 @@
 <?php
 
 
-namespace NetKodi\Traits;
+namespace NetBill360\Traits;
 
 
 use Illuminate\Http\JsonResponse;
@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
 use NetKodi\Resources\API;
 
-trait NetKodiAPIResponse
+trait NetBill360APIResponse
 {
     /**
      * success response

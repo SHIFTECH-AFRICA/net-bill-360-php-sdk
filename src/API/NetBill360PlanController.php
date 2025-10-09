@@ -1,12 +1,12 @@
 <?php
 
-namespace NetKodi\API;
+namespace NetBill360\API;
 
-use NetKodi\Traits\NetKodiAuthType;
+use NetBill360\Traits\NetBill360AuthType;
 
-class NetKodiCustomerController
+class NetBill360PlanController
 {
-    use NetKodiAuthType;
+    use NetBill360AuthType;
 
     /**
      * Constructor: always use Bearer Auth
@@ -17,42 +17,42 @@ class NetKodiCustomerController
     }
 
     /**
-     * Get customers
+     * Get plans
      */
     public function index(): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('customers', 'index'))
+            ->get(netkodi_url('plans', 'index'))
             ->json();
     }
 
     /**
-     * Store customers
+     * Store plans
      */
     public function store(array $data): mixed
     {
         return $this->client($this->token)
-            ->post(netkodi_url('customers', 'store'), $data)
+            ->post(netkodi_url('plans', 'store'), $data)
             ->json();
     }
 
     /**
-     * Show customers
+     * Show plans
      */
-    public function show(string $username): mixed
+    public function show(int $id): mixed
     {
         return $this->client($this->token)
-            ->get(netkodi_url('customers', 'show', ['username' => $username]))
+            ->get(netkodi_url('plans', 'show', ['id' => $id]))
             ->json();
     }
 
     /**
-     * Update customers
+     * Update plans
      */
-    public function update(array $data): mixed
+    public function update(array $data, int $id): mixed
     {
         return $this->client($this->token)
-            ->patch(netkodi_url('customers', 'update'), $data)
+            ->patch(netkodi_url('plans', 'update', ['id' => $id]), $data)
             ->json();
     }
 

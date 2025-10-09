@@ -1,6 +1,6 @@
 {
-    "name": "shiftechafrica/net-kodi-php-sdk",
-    "description": "Library for NetKodi Api Triggers. Use this to manage your ISP clients and network devices.",
+    "name": "shiftechafrica/net-bill-360-php-sdk",
+    "description": "Library for NetBill360 Api Triggers. Use this to manage your ISP clients and network devices.",
     "type": "library",
     "license": "MIT",
     "keywords": [
@@ -11,7 +11,7 @@
         "free radius",
         "mikrotik",
         "internet service provider",
-        "netkodi",
+        "net bill 360",
         "broadband",
         "fiber internet",
         "wireless internet",
@@ -37,10 +37,10 @@
             "homepage": "https://shiftechafrica.com"
         }
     ],
-    "homepage": "https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk",
+    "homepage": "https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk",
     "support": {
-        "issues": "https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk/issues",
-        "source": "https://github.com/SHIFTECH-AFRICA/net-kodi-php-sdk"
+        "issues": "https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/issues",
+        "source": "https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk"
     },
     "minimum-stability": "stable",
     "require": {
@@ -49,16 +49,16 @@
     },
     "autoload": {
         "psr-4": {
-            "NetKodi\\": "src/"
+            "NetBill360\\": "src/"
         },
         "files": [
-            "src/Helpers/netkodi.php"
+            "src/Helpers/netbill360.php"
         ]
     },
     "extra": {
         "laravel": {
             "providers": [
-                "NetKodi\\NetKodiServiceProvider"
+                "NetBill360\\NetBill360ServiceProvider"
             ]
         }
     }
