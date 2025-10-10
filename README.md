@@ -1,4 +1,4 @@
-# <p align="center"><a href="https://netbill360.com/" target="_blank"><img width="100" src="https://shiftechafrica.com/img/logo.png" alt="NetBill360 - Connect - Bill - Sell - Internet"></a></p>
+# <p align="center"><a href="https://netbill360.com/" target="_blank"><img width="100" src="https://netbill360.com/img/logo.png" alt="NetBill360 - Connect - Bill - Sell - Internet"></a></p>
 
 <p align="center">
   <b>NetBill360 - Connect - Bill - Sell - Internet</b><br>
@@ -25,11 +25,13 @@
 
 ## 🚀 Introduction
 
-**NetBill360 PHP SDK** provides a simple and efficient interface for interacting with the **NetBill360 Networking API** — designed for seamless integration with **Mikrotik**, **NAS**, and **PPPoE servers**.
+**NetBill360 PHP SDK** provides a simple and efficient interface for interacting with the **NetBill360 Networking API**
+— designed for seamless integration with **Mikrotik**, **NAS**, and **PPPoE servers**.
 
 It helps ISPs and network administrators manage and automate network operations through the NetBill360 API.
 
 ### Key Features
+
 - 🔌 Real-time user connection and disconnection
 - ⚙️ Automated bandwidth management and speed enforcement
 - 🧩 Centralized NAS and access server control
@@ -49,26 +51,31 @@ composer require shiftechafrica/net-bill-360-php-sdk
 ```
 
 Update to the latest version:
+
 ```bash
 composer update shiftechafrica/net-bill-360-php-sdk --lock
 ```
 
 If not auto-discovered, run:
+
 ```bash
 composer dump-autoload
 ```
 
 Publish the configuration file:
+
 ```bash
 php artisan vendor:publish --provider="NetBill360\NetBill360ServiceProvider"
 ```
 
 The config file will be created at:
+
 ```
 config/netbill360.php
 ```
 
 Add your API token to the `.env` file:
+
 ```dotenv
 NET_BILL_360_API_TOKEN=your_api_token_here
 ```
@@ -135,6 +142,7 @@ return (new NetBill360)->createCustomer([
     "password" => "password"
 ]);
 return (new NetBill360)->getCustomer('netbill360');
+return (new NetBill360)->deleteCustomer('netbill360');
 
 /**
  * SUBSCRIPTIONS
@@ -153,7 +161,7 @@ return (new NetBill360)->getSubscription('netbill360');
 
 | Version | Status | Packagist | Namespace | Release                                                                               |
 |----------|--------|------------|------------|---------------------------------------------------------------------------------------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.0.2](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.0.2) |
+| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.0.3](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.0.3) |
 
 ---
 

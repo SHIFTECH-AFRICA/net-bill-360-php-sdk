@@ -56,4 +56,14 @@ class NetBill360CustomerController
             ->json();
     }
 
+    /**
+     * Delete customers
+     */
+    public function delete(string $username): mixed
+    {
+        return $this->client($this->token)
+            ->delete(netbill360_url('customers', 'show', ['username' => $username]))
+            ->json();
+    }
+
 }

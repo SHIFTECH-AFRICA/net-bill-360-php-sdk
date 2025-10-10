@@ -218,6 +218,12 @@ class NetBill360
         return (new NetBill360CustomerController($this->token))->update($data);
     }
 
+    /** Delete a customer */
+    public function deleteCustomer(string $username): mixed
+    {
+        return (new NetBill360CustomerController($this->token))->delete($username);
+    }
+
     /* -------------------------------------------------------------------------
      | SUBSCRIPTIONS MANAGEMENT
      |-------------------------------------------------------------------------*/
