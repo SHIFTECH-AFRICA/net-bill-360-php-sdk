@@ -56,4 +56,14 @@ class NetBill360PlanController
             ->json();
     }
 
+    /**
+     * Delete plans
+     */
+    public function delete(int $id): mixed
+    {
+        return $this->client($this->token)
+            ->delete(netbill360_url('plans', 'delete', ['id' => $id]))
+            ->json();
+    }
+
 }

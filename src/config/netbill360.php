@@ -52,6 +52,7 @@ return [
             'store' => 'store',
             'show' => 'show/{id}',
             'update' => 'update/{id}',
+            'delete' => 'delete/{id}',
         ],
 
         'pools' => [

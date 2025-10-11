@@ -131,6 +131,7 @@ return (new NetBill360)->createPlan([
     "static_ip" => false
 ]);
 return (new NetBill360)->getPlan(29);
+return (new NetBill360)->deletePlan(29);
 
 /**
  * CUSTOMERS

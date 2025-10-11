@@ -190,6 +190,12 @@ class NetBill360
         return (new NetBill360PlanController($this->token))->update($data, $id);
     }
 
+    /** Delete a specific plan */
+    public function deletePlan(int $id): mixed
+    {
+        return (new NetBill360PlanController($this->token))->delete($id);
+    }
+
     /* -------------------------------------------------------------------------
      | CUSTOMERS MANAGEMENT
      |-------------------------------------------------------------------------*/
