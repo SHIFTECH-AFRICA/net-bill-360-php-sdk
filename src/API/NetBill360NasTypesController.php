@@ -9,11 +9,11 @@ class NetBill360NasTypesController
     use NetBill360AuthType;
 
     /**
-     * Constructor: always use Basic Auth
+     * Constructor: always use Bearer Auth
      */
-    public function __construct()
+    public function __construct(?string $token = null)
     {
-        $this->isBasic = true;
+        $this->token = $token;
     }
 
     /**
@@ -21,7 +21,7 @@ class NetBill360NasTypesController
      */
     public function types()
     {
-        return $this->client()
+        return $this->client($this->token)
             ->get(netbill360_url('nas', 'types'))
             ->json();
     }

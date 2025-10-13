@@ -113,7 +113,7 @@ class NetBill360
     /** Get available NAS types */
     public function getNasTypes(): mixed
     {
-        return (new NetBill360NasTypesController())->types();
+        return (new NetBill360NasTypesController($this->token))->types();
     }
 
     /** Get all NAS devices */
