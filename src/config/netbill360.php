@@ -32,6 +32,23 @@ return [
             'delete' => 'delete/{id}',
         ],
 
+        'wire-guard' => [
+            'index' => 'index',
+            'store' => 'store',
+            'show' => 'show/{id}',
+            'update' => 'update/{id}',
+            'delete' => 'delete/{id}',
+        ],
+
+        'wire-guard-peers' => [
+            'index' => 'index',
+            'store' => 'store',
+            'show' => 'show/{id}',
+            'config' => 'config/{id}',
+            'update' => 'update/{id}',
+            'delete' => 'delete/{id}',
+        ],
+
         'customers' => [
             'index' => 'index',
             'store' => 'store',

@@ -92,18 +92,45 @@ Use the SDK to manage NAS devices, IP pools, bandwidth plans, customers, and sub
 use NetBill360\NetBill360;
 
 /**
- * ----------------------------------------
- *  NetBill360 SDK Usage Examples
- * ----------------------------------------
- * Demonstrates how to interact with the
- * NetBill360 API using CRUD operations.
+ * ============================================================
+ *                NETBILL360 SDK USAGE EXAMPLES
+ * ============================================================
+ * This file demonstrates how to use the NetBill360 PHP SDK
+ * to perform CRUD operations against the NetBill360 API.
+ *
+ * Each section below focuses on a specific API entity, showing
+ * how to:
+ *   - Retrieve lists and single items
+ *   - Create new records
+ *   - Update existing records
+ *   - Delete records
+ *
+ * Make sure you have configured your NetBill360 SDK correctly
+ * before running any of these examples.
+ *
+ * ------------------------------------------------------------
+ * Author: Shiftech Africa
+ * SDK:    NetBill360 PHP SDK
+ * Version: 1.0.*
+ * ------------------------------------------------------------
  */
 
 /**
- * NAS TYPES & DEVICES
+ * ------------------------------------------------------------
+ *  NAS TYPES & DEVICES
+ * ------------------------------------------------------------
+ * NAS (Network Access Servers) are devices that authenticate
+ * users to the network. The following methods allow you to
+ * manage NAS entries.
  */
+
+// Retrieve available NAS types
 return (new NetBill360)->getNasTypes();
+
+// Retrieve all NAS devices
 return (new NetBill360)->getAllNas();
+
+// Create a new NAS device
 return (new NetBill360)->createNas([
     "nasname" => "192.168.88.109",
     "type" => "Huawei",
@@ -111,49 +138,194 @@ return (new NetBill360)->createNas([
     "port" => 1812,
     "description" => "short description"
 ]);
+
+// Update an existing NAS device (ID: 12)
+return (new NetBill360)->updateNas([
+    "type" => "VAS Experts",
+    "secret" => "secret",
+    "port" => 1812,
+    "description" => "short description"
+], 12);
+
+// Get a specific NAS device (ID: 12)
 return (new NetBill360)->getNas(12);
+
+// Delete a NAS device (ID: 12)
 return (new NetBill360)->deleteNas(12);
 
-/**
- * IP POOLS
- */
-return (new NetBill360)->getPools();
-return (new NetBill360)->getPool(12);
 
 /**
- * BANDWIDTH PLANS
+ * ------------------------------------------------------------
+ *  IP POOLS
+ * ------------------------------------------------------------
+ * IP pools define groups of IP addresses available for
+ * assignment to users or devices.
  */
+
+// Retrieve all IP pools
+return (new NetBill360)->getPools();
+
+// Get a specific IP pool (ID: 12)
+return (new NetBill360)->getPool(12);
+
+
+/**
+ * ------------------------------------------------------------
+ *  BANDWIDTH PLANS
+ * ------------------------------------------------------------
+ * Bandwidth plans define speed limits and usage profiles
+ * for customer subscriptions.
+ */
+
+// Retrieve all plans
 return (new NetBill360)->getPlans();
+
+// Create a new bandwidth plan
 return (new NetBill360)->createPlan([
     "plan" => "700MBS",
     "download_limit" => 700,
     "upload_limit" => 700,
-    "static_ip" => false
+    "static_ip" => false,
+    "ip" => "192.0.0.1" // required if static_ip = true
 ]);
+
+// Update an existing plan (ID: 29)
+return (new NetBill360)->updatePlan([
+    "plan" => "5400MBS",
+    "download_limit" => 500,
+    "upload_limit" => 500,
+    "static_ip" => false,
+    "ip" => "192.0.0.1"
+], 29);
+
+// Get a specific plan (ID: 29)
 return (new NetBill360)->getPlan(29);
+
+// Delete a bandwidth plan (ID: 29)
 return (new NetBill360)->deletePlan(29);
 
+
 /**
- * CUSTOMERS
+ * ------------------------------------------------------------
+ *  CUSTOMERS
+ * ------------------------------------------------------------
+ * Customers represent network users who can be assigned
+ * plans and managed via subscriptions.
  */
+
+// Retrieve all customers
 return (new NetBill360)->getCustomers();
+
+// Create a new customer
 return (new NetBill360)->createCustomer([
     "plan_id" => 27,
     "username" => "netbill360",
     "password" => "password"
 ]);
+
+// Update an existing customer
+return (new NetBill360)->updateCustomer([
+    "plan_id" => 27,
+    "username" => "ososiportal",
+    "password" => "password"
+]);
+
+// Retrieve a single customer by username
 return (new NetBill360)->getCustomer('netbill360');
+
+// Delete a customer by username
 return (new NetBill360)->deleteCustomer('netbill360');
 
+
 /**
- * SUBSCRIPTIONS
+ * ------------------------------------------------------------
+ *  SUBSCRIPTIONS
+ * ------------------------------------------------------------
+ * Subscriptions link customers to plans with a start/end
+ * validity period for billing and access control.
  */
+
+// Retrieve all subscriptions
 return (new NetBill360)->getSubscriptions();
+
+// Create a new subscription
 return (new NetBill360)->createSubscription([
     "username" => "netbill360",
     "date" => "2025-11-30 23:59:59"
 ]);
+
+// Update a subscription
+return (new NetBill360)->updateSubscription([
+    "username" => "netbill360",
+    "date" => "2025-10-11 02:00:00"
+]);
+
+// Retrieve a subscription by username
 return (new NetBill360)->getSubscription('netbill360');
+
+
+/**
+ * ------------------------------------------------------------
+ *  WIREGUARD INTERFACES
+ * ------------------------------------------------------------
+ * Interfaces define WireGuard VPN entry points for clients.
+ */
+
+// Retrieve all WireGuard interfaces
+return (new NetBill360)->getWireGuardInterfaces();
+
+// Create a new WireGuard interface
+return (new NetBill360)->createWireGuardInterface([
+    "name" => "Wire 1",
+    "subnet_base" => "10.11.5.0",
+    "subnet_cidr" => 24,
+    "listen_port" => 60000,
+    "enabled" => true
+]);
+
+// Update an existing WireGuard interface (ID: 12)
+return (new NetBill360)->updateWireGuardInterface([
+    "name" => "VAS Experts",
+    "enabled" => true
+], 12);
+
+// Retrieve a specific WireGuard interface (ID: 12)
+return (new NetBill360)->getWireGuardInterface(12);
+
+
+/**
+ * ------------------------------------------------------------
+ *  WIREGUARD PEERS
+ * ------------------------------------------------------------
+ * Peers represent connected clients (devices) using a
+ * specific WireGuard interface.
+ */
+
+// Retrieve all WireGuard peers
+return (new NetBill360)->getWireGuardPeers();
+
+// Create a new WireGuard peer
+return (new NetBill360)->createWireGuardPeer([
+    "wire_guard_id" => 1,
+    "name" => "Peer 1",
+    "public_key" => "8chOvnXg/Xl4jDPOmwFSVLddIs8=",
+    "assigned_ip" => "10.11.5.2",
+    "status" => true
+]);
+
+// Update a WireGuard peer (ID: 12)
+return (new NetBill360)->updateWireGuardPeer([
+    "name" => "VAS Experts",
+    "status" => true,
+    "public_key" => "4iUWTridPn67tVMWLBINn/ZR0lDU6byeVZoPZA4o12I="
+], 12);
+
+// Get a specific WireGuard peer (ID: 12)
+return (new NetBill360)->getWireGuardPeer(12);
+
+// Get the configuration of a peer (for device setup)
+return (new NetBill360)->getWireGuardPeerConfig(12);
+
 ```
 
 ---
@@ -162,7 +334,7 @@ return (new NetBill360)->getSubscription('netbill360');
 
 | Version | Status | Packagist | Namespace | Release                                                                               |
 |----------|--------|------------|------------|---------------------------------------------------------------------------------------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.0.5](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.0.5) |
+| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.0.6](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.0.6) |
 
 ---
 

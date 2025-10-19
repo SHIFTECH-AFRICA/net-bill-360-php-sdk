@@ -9,7 +9,9 @@ use NetBill360\API\{NetBill360CustomerController,
     NetBill360PlanController,
     NetBill360SubscriptionController,
     NetBill360TokenController,
-    NetBill360UsersController
+    NetBill360UsersController,
+    NetBill360WireGuardController,
+    NetBill360WireGuardPeerController
 };
 use NetBill360\Traits\NetBill360AuthType;
 
@@ -256,5 +258,79 @@ class NetBill360
     public function updateSubscription(array $data): mixed
     {
         return (new NetBill360SubscriptionController($this->token))->update($data);
+    }
+
+    /* -------------------------------------------------------------------------
+     | WIRE GUARD INTERFACES MANAGEMENT
+     |-------------------------------------------------------------------------*/
+
+    /** Get all Wire Guard Interfaces */
+    public function getWireGuardInterfaces(): mixed
+    {
+        return (new NetBill360WireGuardController($this->token))->index();
+    }
+
+    /** Create a Create Wire Guard Interface device */
+    public function createWireGuardInterface(array $data): mixed
+    {
+        return (new NetBill360WireGuardController($this->token))->store($data);
+    }
+
+    /** Get Wire Guard Interface details by ID */
+    public function getWireGuardInterface(int $id): mixed
+    {
+        return (new NetBill360WireGuardController($this->token))->show($id);
+    }
+
+    /** Update a Wire Guard Interface */
+    public function updateWireGuardInterface(array $data, int $id): mixed
+    {
+        return (new NetBill360WireGuardController($this->token))->update($data, $id);
+    }
+
+    /** Delete a Wire Guard Interface */
+    public function deleteWireGuardInterface(int $id): mixed
+    {
+        return (new NetBill360WireGuardController($this->token))->delete($id);
+    }
+
+    /* -------------------------------------------------------------------------
+     | WIRE GUARD PEERS MANAGEMENT
+     |-------------------------------------------------------------------------*/
+
+    /** Get all Wire Guard peers */
+    public function getWireGuardPeers(): mixed
+    {
+        return (new NetBill360WireGuardPeerController($this->token))->index();
+    }
+
+    /** Create a Create Wire Guard Peer device */
+    public function createWireGuardPeer(array $data): mixed
+    {
+        return (new NetBill360WireGuardPeerController($this->token))->store($data);
+    }
+
+    /** Get Wire Guard Peer details by ID */
+    public function getWireGuardPeer(int $id): mixed
+    {
+        return (new NetBill360WireGuardPeerController($this->token))->show($id);
+    }
+
+    /** Get Wire Guard Peer Config details by ID */
+    public function getWireGuardPeerConfig(int $id): mixed
+    {
+        return (new NetBill360WireGuardPeerController($this->token))->config($id);
+    }
+
+    /** Update a Wire Guard Peer */
+    public function updateWireGuardPeer(array $data, int $id): mixed
+    {
+        return (new NetBill360WireGuardPeerController($this->token))->update($data, $id);
+    }
+
+    /** Delete a Wire Guard Peer */
+    public function deleteWireGuardPeer(int $id): mixed
+    {
+        return (new NetBill360WireGuardPeerController($this->token))->delete($id);
     }
 }
