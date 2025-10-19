@@ -32,11 +32,23 @@ It helps ISPs and network administrators manage and automate network operations 
 
 ### Key Features
 
-- 🔌 Real-time user connection and disconnection
-- ⚙️ Automated bandwidth management and speed enforcement
-- 🧩 Centralized NAS and access server control
-- 👥 Customer authentication and session management
-- 🧠 Easy Laravel or standalone PHP integration
+- 🔌 Real-time user connection and disconnection — Manage active sessions instantly through the API.
+
+- ⚙️ Automated bandwidth management and speed enforcement — Dynamically apply and enforce user speed limits.
+
+- 🧩 Centralized NAS and access server control — Manage all NAS devices from one unified interface.
+
+- 👥 Customer authentication and session management — Seamlessly handle user creation, authentication, and tracking.
+
+- 🌐 WireGuard VPN configuration and peer management — Automate creation, updates, and synchronization of WireGuard interfaces and peers.
+
+- 💾 Dynamic IP pool allocation and tracking — Efficiently assign and monitor IP address usage across devices.
+
+- 🧠 Easy Laravel or standalone PHP integration — Plug and play within existing Laravel apps or use standalone.
+
+- 🔒 Secure API communication — Built-in support for secure requests and authentication.
+
+- 📊 Comprehensive monitoring and reporting — Access real-time stats for users, plans, and network interfaces.
 
 📘 **Full Documentation:** [https://docs.netbill360.com](https://docs.netbill360.com)
 
@@ -84,7 +96,7 @@ NET_BILL_360_API_TOKEN=your_api_token_here
 
 ## 🧩 Usage
 
-Use the SDK to manage NAS devices, IP pools, bandwidth plans, customers, and subscriptions.
+Use the SDK to easily manage and automate your network infrastructure — including NAS devices, IP pools, bandwidth plans, customer accounts, active subscriptions, and WireGuard VPN interfaces and peers — all through a consistent, developer-friendly API.
 
 ```php
 <?php
