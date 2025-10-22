@@ -32,7 +32,7 @@ return [
             'delete' => 'delete/{id}',
         ],
 
-        'wire-guard' => [
+        'wire-guards' => [
             'index' => 'index',
             'store' => 'store',
             'show' => 'show/{id}',
