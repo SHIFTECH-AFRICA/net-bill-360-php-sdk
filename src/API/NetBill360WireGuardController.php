@@ -47,6 +47,16 @@ class NetBill360WireGuardController
     }
 
     /**
+     * Show wire-guards status
+     */
+    public function showStatus(int $id): mixed
+    {
+        return $this->client($this->token)
+            ->get(netbill360_url('wire-guards', 'status', ['id' => $id]))
+            ->json();
+    }
+
+    /**
      * Update wire-guards
      */
     public function update(array $data, int $id): mixed

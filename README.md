@@ -40,7 +40,8 @@ It helps ISPs and network administrators manage and automate network operations 
 
 - 👥 Customer authentication and session management — Seamlessly handle user creation, authentication, and tracking.
 
-- 🌐 WireGuard VPN configuration and peer management — Automate creation, updates, and synchronization of WireGuard interfaces and peers.
+- 🌐 WireGuard VPN configuration and peer management — Automate creation, updates, and synchronization of WireGuard
+  interfaces and peers.
 
 - 💾 Dynamic IP pool allocation and tracking — Efficiently assign and monitor IP address usage across devices.
 
@@ -96,7 +97,9 @@ NET_BILL_360_API_TOKEN=your_api_token_here
 
 ## 🧩 Usage
 
-Use the SDK to easily manage and automate your network infrastructure — including NAS devices, IP pools, bandwidth plans, customer accounts, active subscriptions, and WireGuard VPN interfaces and peers — all through a consistent, developer-friendly API.
+Use the SDK to easily manage and automate your network infrastructure — including NAS devices, IP pools, bandwidth
+plans, customer accounts, active subscriptions, and WireGuard VPN interfaces and peers — all through a consistent,
+developer-friendly API.
 
 ```php
 <?php
@@ -304,6 +307,9 @@ return (new NetBill360)->updateWireGuardInterface([
 // Retrieve a specific WireGuard interface (ID: 12)
 return (new NetBill360)->getWireGuardInterface(12);
 
+// Retrieve a specific WireGuard interface Status Logs (ID: 12)
+return (new NetBill360)->getWireGuardInterfaceStatus(12);
+
 
 /**
  * ------------------------------------------------------------
@@ -346,7 +352,7 @@ return (new NetBill360)->getWireGuardPeerConfig(12);
 
 | Version | Status | Packagist | Namespace | Release                                                                               |
 |----------|--------|------------|------------|---------------------------------------------------------------------------------------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.0.7](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.0.7) |
+| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.0.8](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.0.8) |
 
 ---
 

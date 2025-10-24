@@ -36,6 +36,7 @@ return [
             'index' => 'index',
             'store' => 'store',
             'show' => 'show/{id}',
+            'status' => 'show/{id}',
             'update' => 'update/{id}',
             'delete' => 'delete/{id}',
         ],

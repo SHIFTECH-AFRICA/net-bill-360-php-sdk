@@ -282,6 +282,12 @@ class NetBill360
         return (new NetBill360WireGuardController($this->token))->show($id);
     }
 
+    /** Get Wire Guard Interface status details by ID */
+    public function getWireGuardInterfaceStatus(int $id): mixed
+    {
+        return (new NetBill360WireGuardController($this->token))->showStatus($id);
+    }
+
     /** Update a Wire Guard Interface */
     public function updateWireGuardInterface(array $data, int $id): mixed
     {
