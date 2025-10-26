@@ -235,14 +235,20 @@ return (new NetBill360)->getCustomers();
 return (new NetBill360)->createCustomer([
     "plan_id" => 27,
     "username" => "netbill360",
-    "password" => "password"
+    "password" => "password",
+    "service_type" => "hotspot", // pppoe, hotspot or static
+    "ip_address" => "", // required if service_type = static
+    "port_limit" => 1 // required if service_type = hotspot
 ]);
 
 // Update an existing customer
 return (new NetBill360)->updateCustomer([
     "plan_id" => 27,
-    "username" => "ososiportal",
-    "password" => "password"
+    "username" => "netbill360",
+    "password" => "password",
+    "service_type" => "hotspot", // pppoe, hotspot or static
+    "ip_address" => "", // required if service_type = static
+    "port_limit" => 1 // required if service_type = hotspot
 ]);
 
 // Retrieve a single customer by username
