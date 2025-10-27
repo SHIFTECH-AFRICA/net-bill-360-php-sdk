@@ -220,6 +220,12 @@ class NetBill360
         return (new NetBill360CustomerController($this->token))->show($username);
     }
 
+    /** Get customer online status by username */
+    public function getCustomerOnlineStatus(string $username): mixed
+    {
+        return (new NetBill360CustomerController($this->token))->status($username);
+    }
+
     /** Update customer details */
     public function updateCustomer(array $data): mixed
     {

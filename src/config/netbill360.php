@@ -54,6 +54,7 @@ return [
             'index' => 'index',
             'store' => 'store',
             'show' => 'show/{username}', // uses username not ID
+            'status' => 'status/{username}', // uses username not ID
             'delete' => 'delete/{username}', // uses username not ID
             'update' => 'update',
         ],

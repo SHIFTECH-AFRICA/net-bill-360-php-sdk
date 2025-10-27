@@ -37,12 +37,22 @@ class NetBill360CustomerController
     }
 
     /**
-     * Show customers
+     * Show customer
      */
     public function show(string $username): mixed
     {
         return $this->client($this->token)
             ->get(netbill360_url('customers', 'show', ['username' => $username]))
+            ->json();
+    }
+
+    /**
+     * Show customer online status
+     */
+    public function status(string $username): mixed
+    {
+        return $this->client($this->token)
+            ->get(netbill360_url('customers', 'status', ['username' => $username]))
             ->json();
     }
 

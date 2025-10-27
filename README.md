@@ -236,7 +236,7 @@ return (new NetBill360)->createCustomer([
     "plan_id" => 27,
     "username" => "netbill360",
     "password" => "password",
-    "service_type" => "hotspot", // pppoe, hotspot or static
+    "service_type" => "pppoe", // pppoe, hotspot or static
     "ip_address" => "", // required if service_type = static
     "port_limit" => 1 // required if service_type = hotspot
 ]);
@@ -246,13 +246,16 @@ return (new NetBill360)->updateCustomer([
     "plan_id" => 27,
     "username" => "netbill360",
     "password" => "password",
-    "service_type" => "hotspot", // pppoe, hotspot or static
+    "service_type" => "pppoe", // pppoe, hotspot or static
     "ip_address" => "", // required if service_type = static
     "port_limit" => 1 // required if service_type = hotspot
 ]);
 
 // Retrieve a single customer by username
 return (new NetBill360)->getCustomer('netbill360');
+
+// Retrieve a single customer oline status by username
+return (new NetBill360)->getCustomerOnlineStatus('netbill360');
 
 // Delete a customer by username
 return (new NetBill360)->deleteCustomer('netbill360');
@@ -356,9 +359,9 @@ return (new NetBill360)->getWireGuardPeerConfig(12);
 
 ## 🧭 Version Guidance
 
-| Version | Status | Packagist | Namespace | Release                                                                               |
-|----------|--------|------------|------------|---------------------------------------------------------------------------------------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.0.9](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.0.9) |
+| Version | Status | Packagist | Namespace | Release                                                                                 |
+|----------|--------|------------|------------|-----------------------------------------------------------------------------------------|
+| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.0.10](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.0.10) |
 
 ---
 
