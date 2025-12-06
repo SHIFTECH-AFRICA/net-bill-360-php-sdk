@@ -57,6 +57,16 @@ class NetBill360CustomerController
     }
 
     /**
+     * disconnect customer online devices
+     */
+    public function disconnect(string $username): mixed
+    {
+        return $this->client($this->token)
+            ->get(netbill360_url('customers', 'disconnect-devices', ['username' => $username]))
+            ->json();
+    }
+
+    /**
      * Update customers
      */
     public function update(array $data): mixed

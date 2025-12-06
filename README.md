@@ -257,6 +257,9 @@ return (new NetBill360)->getCustomer('netbill360');
 // Retrieve a single customer oline status by username
 return (new NetBill360)->getCustomerOnlineStatus('netbill360');
 
+// Disconnect customer online devices by username
+return (new NetBill360)->disconnectCustomerDevices('netbill360');
+
 // Delete a customer by username
 return (new NetBill360)->deleteCustomer('netbill360');
 
@@ -359,9 +362,9 @@ return (new NetBill360)->getWireGuardPeerConfig(12);
 
 ## 🧭 Version Guidance
 
-| Version | Status | Packagist | Namespace | Release                                                                                 |
-|----------|--------|------------|------------|-----------------------------------------------------------------------------------------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.0.10](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.0.10) |
+| Version | Status   | Packagist | Namespace | Release                                                                               |
+|---------|----------|------------|------------|---------------------------------------------------------------------------------------|
+| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.0](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.0) |
 
 ---
 
