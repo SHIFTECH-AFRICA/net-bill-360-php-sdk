@@ -290,6 +290,9 @@ return (new NetBill360)->updateSubscription([
 // Retrieve a subscription by username
 return (new NetBill360)->getSubscription('netbill360');
 
+// Delete a subscription by username
+return (new NetBill360)->deleteSubscription('netbill360');
+
 
 /**
  * ------------------------------------------------------------

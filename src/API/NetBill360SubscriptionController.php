@@ -56,4 +56,14 @@ class NetBill360SubscriptionController
             ->json();
     }
 
+    /**
+     * Delete subscriptions
+     */
+    public function delete(string $username): mixed
+    {
+        return $this->client($this->token)
+            ->delete(netbill360_url('subscriptions', 'delete', ['username' => $username]))
+            ->json();
+    }
+
 }

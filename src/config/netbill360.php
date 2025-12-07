@@ -64,6 +64,7 @@ return [
             'index' => 'index',
             'store' => 'store',
             'show' => 'show/{username}',
+            'delete' => 'delete/{username}',
             'update' => 'update',
         ],
 

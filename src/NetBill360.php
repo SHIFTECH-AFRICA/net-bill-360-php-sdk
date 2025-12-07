@@ -272,6 +272,12 @@ class NetBill360
         return (new NetBill360SubscriptionController($this->token))->update($data);
     }
 
+    /** delete subscription details by username */
+    public function deleteSubscription(string $username): mixed
+    {
+        return (new NetBill360SubscriptionController($this->token))->delete($username);
+    }
+
     /* -------------------------------------------------------------------------
      | WIRE GUARD INTERFACES MANAGEMENT
      |-------------------------------------------------------------------------*/
