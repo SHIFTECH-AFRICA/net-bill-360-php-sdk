@@ -1,4 +1,4 @@
-# <p align="center"><a href="https://netbill360.com/" target="_blank"><img width="100" src="https://netbill360.com/img/logo.png" alt="NetBill360 - Connect - Bill - Sell - Internet"></a></p>
+# <p align="center"><a href="https://netbill360.com/" target="_blank"><img width="200" src="https://alphabet.nyc3.cdn.digitaloceanspaces.com/shared/netbill360/logo-white.png" alt="NetBill360 - Connect - Bill - Sell - Internet"></a></p>
 
 <p align="center">
   <b>NetBill360 - Connect - Bill - Sell - Internet</b><br>
