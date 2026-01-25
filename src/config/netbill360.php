@@ -81,6 +81,10 @@ return [
             'show' => 'show/{id}',
         ],
 
+        'billings' => [
+            'pppoe' => 'pppoe/{id}',
+        ],
+
         'tokens' => [
             'index' => 'index',
             'store' => 'store',

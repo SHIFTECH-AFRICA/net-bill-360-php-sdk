@@ -2,7 +2,8 @@
 
 namespace NetBill360;
 
-use NetBill360\API\{NetBill360CustomerController,
+use NetBill360\API\{NetBill360BillingController,
+    NetBill360CustomerController,
     NetBill360IPPoolController,
     NetBill360NasController,
     NetBill360NasTypesController,
@@ -106,6 +107,16 @@ class NetBill360
     public function deleteToken(int $id): mixed
     {
         return (new NetBill360TokenController())->delete($id);
+    }
+
+    /* -------------------------------------------------------------------------
+     | NETWORK BILLING
+     |-------------------------------------------------------------------------*/
+
+    /** Bill for pppoe */
+    public function billPPPOE(array $data, int $id): mixed
+    {
+        return (new NetBill360BillingController())->pppoeBilling($data, $id);
     }
 
     /* -------------------------------------------------------------------------
