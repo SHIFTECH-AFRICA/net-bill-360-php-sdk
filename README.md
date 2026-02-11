@@ -183,6 +183,28 @@ return (new NetBill360)->getPools();
 // Get a specific IP pool (ID: 12)
 return (new NetBill360)->getPool(12);
 
+/**
+ * ------------------------------------------------------------
+ *  FAIR USAGE POLICY CHECKS FOR DATA AND TIME
+ * ------------------------------------------------------------
+ * This ensures you do checks for FUP and protect your network
+ * from high volume in lower bandwidth plans/customers
+ */
+
+// Retrieve data usage per customer/connection
+return (new NetBill360)->getDataUsage([
+    "username" => "netbill360",
+    "from_date" => "2025-10-27 13:28:33.000",
+    "to_date" => "2025-10-27 13:28:33.000"
+]);
+
+// Retrieve time usage per customer/connection
+return (new NetBill360)->getTimeUsage([
+    "username" => "netbill360",
+    "from_date" => "2025-10-27 13:28:33.000",
+    "to_date" => "2025-10-27 13:28:33.000"
+]);
+
 
 /**
  * ------------------------------------------------------------
@@ -367,7 +389,7 @@ return (new NetBill360)->getWireGuardPeerConfig(12);
 
 | Version | Status   | Packagist | Namespace | Release                                                                               |
 |---------|----------|------------|------------|---------------------------------------------------------------------------------------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.0](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.0) |
+| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.3](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.3) |
 
 ---
 

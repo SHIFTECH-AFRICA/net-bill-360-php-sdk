@@ -81,6 +81,11 @@ return [
             'show' => 'show/{id}',
         ],
 
+        'fup' => [
+            'data-usage' => 'data-usage',
+            'time-usage' => 'time-usage'
+        ],
+
         'billings' => [
             'pppoe' => 'pppoe/{id}',
         ],

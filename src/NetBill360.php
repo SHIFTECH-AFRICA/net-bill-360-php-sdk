@@ -4,6 +4,7 @@ namespace NetBill360;
 
 use NetBill360\API\{NetBill360BillingController,
     NetBill360CustomerController,
+    NetBill360FairUsagePolicyController,
     NetBill360IPPoolController,
     NetBill360NasController,
     NetBill360NasTypesController,
@@ -367,5 +368,21 @@ class NetBill360
     public function deleteWireGuardPeer(int $id): mixed
     {
         return (new NetBill360WireGuardPeerController($this->token))->delete($id);
+    }
+
+    /* -------------------------------------------------------------------------
+     | FAIR USAGE POLICY CHECKS FOR DATA AND TIME
+     |-------------------------------------------------------------------------*/
+
+    /** Get data usage */
+    public function getDataUsage(array $data): mixed
+    {
+        return (new NetBill360FairUsagePolicyController($this->token))->dataUsage($data);
+    }
+
+    /** Get time usage */
+    public function getTimeUsage(array $data): mixed
+    {
+        return (new NetBill360FairUsagePolicyController($this->token))->timeUsage($data);
     }
 }
