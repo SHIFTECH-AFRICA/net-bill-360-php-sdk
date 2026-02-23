@@ -260,7 +260,8 @@ return (new NetBill360)->createCustomer([
     "password" => "password",
     "service_type" => "pppoe", // pppoe, hotspot or static
     "ip_address" => "", // required if service_type = static
-    "port_limit" => 1 // required if service_type = hotspot
+    "port_limit" => 1 // required if service_type = hotspot,
+    "devices" => 1 // number of devices to be allowed connection on the same pppoe client/access
 ]);
 
 // Update an existing customer
@@ -270,7 +271,8 @@ return (new NetBill360)->updateCustomer([
     "password" => "password",
     "service_type" => "pppoe", // pppoe, hotspot or static
     "ip_address" => "", // required if service_type = static
-    "port_limit" => 1 // required if service_type = hotspot
+    "port_limit" => 1, // required if service_type = hotspot
+    "devices" => 1 // number of devices to be allowed connection on the same pppoe client/access
 ]);
 
 // Retrieve a single customer by username
