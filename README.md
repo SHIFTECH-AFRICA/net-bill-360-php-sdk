@@ -139,7 +139,21 @@ use NetBill360\NetBill360;
  * manage NAS entries.
  */
 
-// Retrieve available NAS types
+/**
+ * Retrieve available NAS types
+ * [
+        "MikroTik",
+        "Cisco",
+        "Huawei",
+        "UBNT Access Point",
+        "Ubiquiti EdgeRouter",
+        "Nokia",
+        "VAS Experts",
+        "netElastic BNG",
+        "RtBrick BNG",
+        "Generic"
+    ]
+*/
 return (new NetBill360)->getNasTypes();
 
 // Retrieve all NAS devices
@@ -284,6 +298,9 @@ return (new NetBill360)->getCustomerOnlineStatus('netbill360');
 // Disconnect customer online devices by username
 return (new NetBill360)->disconnectCustomerDevices('netbill360');
 
+// Connected customer online devices by username
+return (new NetBill360)->connectedCustomerDevices('netbill360');
+
 // Delete a customer by username
 return (new NetBill360)->deleteCustomer('netbill360');
 
@@ -391,7 +408,7 @@ return (new NetBill360)->getWireGuardPeerConfig(12);
 
 | Version | Status   | Packagist | Namespace | Release                                                                               |
 |---------|----------|------------|------------|---------------------------------------------------------------------------------------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.3](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.3) |
+| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.4](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.4) |
 
 ---
 

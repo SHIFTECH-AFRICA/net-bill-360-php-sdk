@@ -11,8 +11,8 @@ if (!function_exists('netbill360_url')) {
      * netbill360_url('users', 'show', ['id' => 123]);
      * // https://api.netbill360.com/api/v1/users/show/123
      *
-     * netbill360_url('customers', 'show', ['username' => 'ososiportal']);
-     * // https://api.netbill360.com/api/v1/customers/show/ososiportal
+     * netbill360_url('customers', 'show', ['username' => 'netbill360']);
+     * // https://api.netbill360.com/api/v1/customers/show/netbill360
      *
      * netbill360_url('users', 'index', [], ['page' => 2, 'limit' => 20]);
      * // https://api.netbill360.com/api/v1/users/index?page=2&limit=20

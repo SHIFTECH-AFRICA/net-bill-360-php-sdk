@@ -67,6 +67,16 @@ class NetBill360CustomerController
     }
 
     /**
+     * connected customer online devices
+     */
+    public function connect(string $username): mixed
+    {
+        return $this->client($this->token)
+            ->get(netbill360_url('customers', 'connected-devices', ['username' => $username]))
+            ->json();
+    }
+
+    /**
      * Update customers
      */
     public function update(array $data): mixed

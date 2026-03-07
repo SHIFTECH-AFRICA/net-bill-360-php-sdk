@@ -244,6 +244,12 @@ class NetBill360
         return (new NetBill360CustomerController($this->token))->disconnect($username);
     }
 
+    /** Connected customer online devices by username */
+    public function connectedCustomerDevices(string $username): mixed
+    {
+        return (new NetBill360CustomerController($this->token))->connect($username);
+    }
+
     /** Update customer details */
     public function updateCustomer(array $data): mixed
     {
