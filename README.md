@@ -295,10 +295,10 @@ return (new NetBill360)->getCustomer('netbill360');
 // Retrieve a single customer oline status by username
 return (new NetBill360)->getCustomerOnlineStatus('netbill360');
 
-// Disconnect customer online devices by username
+// Disconnect customer online routers/CPEs/PPPoE by username
 return (new NetBill360)->disconnectCustomerDevices('netbill360');
 
-// Connected customer online devices by username
+// Connected customer online routers/CPEs/PPPoE by username
 return (new NetBill360)->connectedCustomerDevices('netbill360');
 
 // Delete a customer by username
