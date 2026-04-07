@@ -80,6 +80,7 @@ return [
         'pools' => [
             'index' => 'index',
             'show' => 'show/{id}',
+            'delete' => 'delete/{id}',
         ],
 
         'fup' => [

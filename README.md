@@ -197,6 +197,9 @@ return (new NetBill360)->getPools();
 // Get a specific IP pool (ID: 12)
 return (new NetBill360)->getPool(12);
 
+// Delete a specific IP pool (ID: 12)
+return (new NetBill360)->deletePool(12);
+
 /**
  * ------------------------------------------------------------
  *  FAIR USAGE POLICY CHECKS FOR DATA AND TIME
@@ -237,6 +240,7 @@ return (new NetBill360)->createPlan([
     "download_limit" => 700,
     "upload_limit" => 700,
     "static_ip" => false,
+    "bandwidth_type" => 'dedicated', // dedicated/shared
     "ip" => "192.0.0.1" // required if static_ip = true
 ]);
 
@@ -246,6 +250,7 @@ return (new NetBill360)->updatePlan([
     "download_limit" => 500,
     "upload_limit" => 500,
     "static_ip" => false,
+    "bandwidth_type" => 'shared', // dedicated/shared
     "ip" => "192.0.0.1"
 ], 29);
 
@@ -408,7 +413,7 @@ return (new NetBill360)->getWireGuardPeerConfig(12);
 
 | Version | Status   | Packagist | Namespace | Release                                                                               |
 |---------|----------|------------|------------|---------------------------------------------------------------------------------------|
-| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.4](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.4) |
+| **1.x** | ✅ Latest | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.5](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.5) |
 
 ---
 

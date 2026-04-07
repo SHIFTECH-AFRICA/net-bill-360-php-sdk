@@ -27,12 +27,22 @@ class NetBill360IPPoolController
     }
 
     /**
-     * Show nas pools
+     * Show nas pool
      */
     public function show(int $id): mixed
     {
         return $this->client($this->token)
             ->get(netbill360_url('pools', 'show', ['id' => $id]))
+            ->json();
+    }
+
+    /**
+     * Delete nas pool
+     */
+    public function delete(int $id): mixed
+    {
+        return $this->client($this->token)
+            ->delete(netbill360_url('pools', 'delete', ['id' => $id]))
             ->json();
     }
 }

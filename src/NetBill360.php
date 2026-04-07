@@ -161,7 +161,7 @@ class NetBill360
     }
 
     /* -------------------------------------------------------------------------
-     | IP POOLS MANAGEMENT
+     | IP POOLS MANAGEMENT (SHARED POOS AND DEDICATED POOLS)
      |-------------------------------------------------------------------------*/
 
     /** Get all IP pools */
@@ -174,6 +174,12 @@ class NetBill360
     public function getPool(int $id): mixed
     {
         return (new NetBill360IPPoolController($this->token))->show($id);
+    }
+
+    /** Delete specific pool by ID */
+    public function deletePool(int $id): mixed
+    {
+        return (new NetBill360IPPoolController($this->token))->delete($id);
     }
 
     /* -------------------------------------------------------------------------
