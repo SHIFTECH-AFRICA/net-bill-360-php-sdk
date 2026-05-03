@@ -288,13 +288,15 @@ $sdk->getSubscriptions();
 // Create a new subscription for a customer (sets their access expiry date)
 $sdk->createSubscription([
     "username" => "netbill360",
-    "date"     => "2025-11-30 23:59:59" // Access expires at the end of this date/time
+    "date"     => "2025-11-30 23:59:59", // Access expires at the end of this date/time
+    "timezone" => "Africa/Nairobi" // optional - Use a valid IANA timezone
 ]);
 
 // Update (extend or change) a customer's subscription expiry
 $sdk->updateSubscription([
     "username" => "netbill360",
-    "date"     => "2025-12-31 23:59:59" // New expiry date
+    "date"     => "2025-12-31 23:59:59", // New expiry date
+    "timezone" => "Africa/Nairobi" // optional - Use a valid IANA timezone
 ]);
 
 // Get a specific customer's subscription details
