@@ -3,6 +3,7 @@
 namespace NetBill360;
 
 use NetBill360\API\{NetBill360BillingController,
+    NetBill360ConnectionReport,
     NetBill360CustomerController,
     NetBill360FairUsagePolicyController,
     NetBill360IPPoolController,
@@ -120,6 +121,18 @@ class NetBill360
         return (new NetBill360BillingController())->pppoeBilling($data, $id);
     }
 
+    /** Pending monthly active PPPOE */
+    public function pendingMonthlyBillings(): mixed
+    {
+        return (new NetBill360BillingController())->pendingMonthlyBillings();
+    }
+
+    /** Monthly active PPPOE */
+    public function monthlyBillings(): mixed
+    {
+        return (new NetBill360BillingController())->monthlyBillings();
+    }
+
     /* -------------------------------------------------------------------------
      | NAS MANAGEMENT
      |-------------------------------------------------------------------------*/
@@ -184,7 +197,8 @@ class NetBill360
 
     /* -------------------------------------------------------------------------
      | PLANS MANAGEMENT
-     |-------------------------------------------------------------------------*/
+     |-------------------------------------------------------------------------
+    */
 
     /** Get all bandwidth plans */
     public function getPlans(): mixed
@@ -218,7 +232,8 @@ class NetBill360
 
     /* -------------------------------------------------------------------------
      | CUSTOMERS MANAGEMENT
-     |-------------------------------------------------------------------------*/
+     |-------------------------------------------------------------------------
+    */
 
     /** Get all customers */
     public function getCustomers(): mixed
@@ -270,7 +285,8 @@ class NetBill360
 
     /* -------------------------------------------------------------------------
      | SUBSCRIPTIONS MANAGEMENT
-     |-------------------------------------------------------------------------*/
+     |-------------------------------------------------------------------------
+    */
 
     /** Get all subscriptions */
     public function getSubscriptions(): mixed
@@ -304,7 +320,8 @@ class NetBill360
 
     /* -------------------------------------------------------------------------
      | WIRE GUARD INTERFACES MANAGEMENT
-     |-------------------------------------------------------------------------*/
+     |-------------------------------------------------------------------------
+    */
 
     /** Get all Wire Guard Interfaces */
     public function getWireGuardInterfaces(): mixed
@@ -344,7 +361,8 @@ class NetBill360
 
     /* -------------------------------------------------------------------------
      | WIRE GUARD PEERS MANAGEMENT
-     |-------------------------------------------------------------------------*/
+     |-------------------------------------------------------------------------
+    */
 
     /** Get all Wire Guard peers */
     public function getWireGuardPeers(): mixed
@@ -384,7 +402,8 @@ class NetBill360
 
     /* -------------------------------------------------------------------------
      | FAIR USAGE POLICY CHECKS FOR DATA AND TIME
-     |-------------------------------------------------------------------------*/
+     |-------------------------------------------------------------------------
+    */
 
     /** Get data usage */
     public function getDataUsage(array $data): mixed
@@ -396,5 +415,16 @@ class NetBill360
     public function getTimeUsage(array $data): mixed
     {
         return (new NetBill360FairUsagePolicyController($this->token))->timeUsage($data);
+    }
+
+    /* -------------------------------------------------------------------------
+     | SHOW MONTHLY CONNECTIONS ACTIVE PPPOE PER NAS DEVICE
+     |-------------------------------------------------------------------------
+    */
+
+    /** Get active pppoe connections reports */
+    public function pppoeConnectionReport(): mixed
+    {
+        return (new NetBill360ConnectionReport($this->token))->pppoeConnectionReport();
     }
 }

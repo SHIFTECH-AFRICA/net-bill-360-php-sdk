@@ -83,6 +83,10 @@ return [
             'delete' => 'delete/{id}',
         ],
 
+        'connection-report' => [
+            'pppoe' => 'pppoe'
+        ],
+
         'fup' => [
             'data-usage' => 'data-usage',
             'time-usage' => 'time-usage'
@@ -90,6 +94,8 @@ return [
 
         'billings' => [
             'pppoe' => 'pppoe/{id}',
+            'pending' => 'pending',
+            'all' => 'all'
         ],
 
         'tokens' => [

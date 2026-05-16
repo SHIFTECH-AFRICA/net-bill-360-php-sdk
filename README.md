@@ -78,7 +78,7 @@ composer update shiftechafrica/net-bill-360-php-sdk --lock
 composer dump-autoload
 ```
 
-### Step 4 — Publish the config file (Laravel only)
+### Step 4 — Publish the config file (Laravel only) (optional)
 
 ```bash
 php artisan vendor:publish --provider="NetBill360\NetBill360ServiceProvider"
@@ -164,6 +164,17 @@ $sdk->getPool(12);
 
 // Delete an IP pool by ID (use with caution — active IPs may be affected)
 $sdk->deletePool(12);
+```
+
+---
+
+### 📡 Connection Report
+
+> Get active PPPoE connection report grouped by NAS/device
+
+```php
+// Get active pppoe connections reports
+$sdk->pppoeConnectionReport();
 ```
 
 ---
@@ -377,7 +388,7 @@ $sdk->getWireGuardPeerConfig(12);
 
 | Version | Status | Package | Namespace | Latest Release                                                                        |
 |---|---|---|---|---------------------------------------------------------------------------------------|
-| **1.x** | ✅ Active | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.6](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.6) |
+| **1.x** | ✅ Active | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.6](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.7) |
 
 ---
 

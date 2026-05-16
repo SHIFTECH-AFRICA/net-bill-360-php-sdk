@@ -26,4 +26,24 @@ class NetBill360BillingController
             ->json();
     }
 
+    /**
+     * Get pending monthly active PPPOE
+     */
+    public function pendingMonthlyBillings(): mixed
+    {
+        return $this->client()
+            ->get(netbill360_url('billings', 'pending'))
+            ->json();
+    }
+
+    /**
+     * Get all monthly active PPPOE
+     */
+    public function monthlyBillings(): mixed
+    {
+        return $this->client()
+            ->get(netbill360_url('billings', 'all'))
+            ->json();
+    }
+
 }
