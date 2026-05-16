@@ -388,7 +388,7 @@ $sdk->getWireGuardPeerConfig(12);
 
 | Version | Status | Package | Namespace | Latest Release                                                                        |
 |---|---|---|---|---------------------------------------------------------------------------------------|
-| **1.x** | ✅ Active | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.6](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.7) |
+| **1.x** | ✅ Active | `shiftechafrica/net-bill-360-php-sdk` | `NetBill360\NetBill360ServiceProvider` | [v1.1.7](https://github.com/SHIFTECH-AFRICA/net-bill-360-php-sdk/releases/tag/v1.1.7) |
 
 ---
 
