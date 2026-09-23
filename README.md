@@ -256,7 +256,7 @@ $sdk->createCustomer([
     "service_type" => "pppoe",    // "pppoe", "hotspot", or "static"
     "ip_address"   => "",         // Required only if service_type is "static"
     "port_limit"   => 1,          // Required only if service_type is "hotspot"
-    "devices"      => 1           // Max simultaneous device connections
+    "devices"      => 1           // Max simultaneous device connections - Required only if service_type is "pppoe"
 ]);
 
 // Update an existing customer's details
