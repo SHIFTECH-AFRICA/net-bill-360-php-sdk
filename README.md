@@ -300,14 +300,16 @@ $sdk->getSubscriptions();
 $sdk->createSubscription([
     "username" => "netbill360",
     "date"     => "2025-11-30 23:59:59", // Access expires at the end of this date/time
-    "timezone" => "Africa/Nairobi" // optional - Use a valid IANA timezone
+    "timezone" => "Africa/Nairobi", // optional - Use a valid IANA timezone
+    "duration_seconds" => 3600 // optional - Only applicable for hot spot sessions and value passed should be in seconds
 ]);
 
 // Update (extend or change) a customer's subscription expiry
 $sdk->updateSubscription([
     "username" => "netbill360",
     "date"     => "2025-12-31 23:59:59", // New expiry date
-    "timezone" => "Africa/Nairobi" // optional - Use a valid IANA timezone
+    "timezone" => "Africa/Nairobi", // optional - Use a valid IANA timezone
+    "duration_seconds" => 3600 // optional - Only applicable for hot spot sessions and value passed should be in seconds
 ]);
 
 // Get a specific customer's subscription details
