@@ -217,7 +217,9 @@ $sdk->createPlan([
     "static_ip"      => false,           // Set true if this plan uses a fixed IP address
     "bandwidth_type" => "dedicated",     // "dedicated" = full speed, "shared" = split among users
     "ip"             => "192.0.0.1",     // Required only if static_ip is true
-    "devices"        => 1               // Max devices allowed per PPPoE connection
+    "devices"        => 1,              // Max devices allowed per PPPoE connection
+    "type"           => "pppoe",        // Required pppoe or hotspot or static
+    "port_limit"     => 1               // optional only applicable on type hotspot
 ]);
 
 // Update an existing plan by its ID
@@ -229,6 +231,8 @@ $sdk->updatePlan([
     "bandwidth_type" => "shared",
     "ip"             => "192.0.0.1",
     "devices"        => 5
+    "type"           => "hotspot",    
+    "port_limit"     => 1               
 ], 29); // <-- Plan ID to update
 
 // Get details for a specific plan
