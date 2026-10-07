@@ -161,6 +161,12 @@ class NetBill360
         return (new NetBill360NasController($this->token))->show($id);
     }
 
+    /** Get NAS Performance by ID */
+    public function nasPerformance(array $data, int $id): mixed
+    {
+        return (new NetBill360NasController($this->token))->performance($data, $id);
+    }
+
     /** Update a NAS device */
     public function updateNas(array $data, int $id): mixed
     {

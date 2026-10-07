@@ -47,6 +47,16 @@ class NetBill360NasController
     }
 
     /**
+     * Show nas performance
+     */
+    public function performance(array $data, int $id): mixed
+    {
+        return $this->client($this->token)
+            ->post(netbill360_url('nas', 'performance', ['id' => $id]), $data)
+            ->json();
+    }
+
+    /**
      * Update nas
      */
     public function update(array $data, int $id): mixed

@@ -145,6 +145,12 @@ $sdk->updateNas([
 // Fetch details of a specific NAS device by its ID
 $sdk->getNas(12);
 
+// Get Nas Performance metric for connections and packet loss Metrics NAS-Error, User-Request, Lost-Carrier, NAS-Request, NAS-Reboot
+$sdk->nasPerformance([
+    "from_date" => "2025-10-27 00:00:00.000", // Start of the period
+    "to_date"   => "2025-10-27 23:59:59.000"  // End of the period
+],12);
+
 // Permanently remove a NAS device by its ID
 $sdk->deleteNas(12);
 ```

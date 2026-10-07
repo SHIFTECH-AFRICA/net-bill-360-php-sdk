@@ -28,6 +28,7 @@ return [
             'index' => 'index',
             'store' => 'store',
             'show' => 'show/{id}',
+            'performance' => 'performance/{id}',
             'update' => 'update/{id}',
             'delete' => 'delete/{id}',
         ],
