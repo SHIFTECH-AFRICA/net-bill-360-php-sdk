@@ -162,7 +162,7 @@ class NetBill360
     }
 
     /** Get NAS Performance by ID */
-    public function nasPerformance(array $data, int $id): mixed
+    public function getNasPerformance(array $data, int $id): mixed
     {
         return (new NetBill360NasController($this->token))->performance($data, $id);
     }

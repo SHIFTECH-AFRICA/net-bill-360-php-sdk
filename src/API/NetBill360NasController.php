@@ -52,7 +52,7 @@ class NetBill360NasController
     public function performance(array $data, int $id): mixed
     {
         return $this->client($this->token)
-            ->post(netbill360_url('nas', 'performance', ['id' => $id]), $data)
+            ->get(netbill360_url('nas', 'performance', ['id' => $id]), $data)
             ->json();
     }
 
